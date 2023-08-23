@@ -4,8 +4,9 @@ const userSchema = new mongoose.Schema({
 
     googleId:String, 
     name : String, 
-    email: String
+    email: String, 
+    identifier: String
 })
 
 
-module.exports= mongoose.model(User,userSchema)
+module.exports= mongoose.model('User',userSchema)

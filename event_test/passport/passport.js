@@ -9,7 +9,7 @@ const passport=passport.use(new GoogleStrategy({
 
     clientID:process.env.CLIENT_ID,
     clientSecret:process.env.CLIENT_SECRET,
-    callbackURL:"/aut/google/callback"
+    callbackURL:"/auth/google/callback"
 }, 
 
 (accessToken, refreshToken, profile, done)=>{
