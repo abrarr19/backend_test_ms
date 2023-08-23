@@ -1,12 +1,15 @@
 require('dotenv').config()
 const { googleapis, google } = require('googleapis')
 // const dayjs = require("dayjs")
-// const { uuid } = require('uuidv4')
+const { uuid } = require('uuidv4')
 const mongoose = require("mongoose")
 const Event= require("./models/eventSchema")
 const db=require("./db/db")
+const signup=require('./routes/SignUp')
 
 const express= require("express")
+
+
 
 
 const oauth2client = new google.auth.OAuth2(
@@ -33,9 +36,12 @@ app.get('/', (req, res) => {
     res.send("this is working")
 })
 
+app.use('/',signup)
 
 
-app.get("/createEvent", (req, res) => {
+
+
+app.get("/createEvents", (req, res) => {
 
     const url = oauth2client.generateAuthUrl({
         access_type: "offline",
@@ -56,15 +62,47 @@ app.get('/google/redirect', async (req, res) => {
 
     console.log(tokens)
 
-    res.send("it is working ")
+    res.redirect('/dashboard')
+})
+
+app.get("/dashboard", (req, res)=>{
+
+    res.send("this is dashboard page ")
 })
       
+const userdb= require("./models/userSchema")
+const eventdb= require("./models/eventSchema")
+
+
+app.get('/user/:identifier/events/:eventIdentifier', async (req, res)=>{
+
+    const UserIdentifier = req.params.identifier;
+    const Eidentifier= req.params.eventIdentifier;
+
+    const eventData= req.body;
+
+    try {
+        const event = await userdb.findOneAndUpdate(
+            { identifier: UserIdentifier },
+            
+          ) && await eventdb.findOneAndUpdate (
+            {eventIdentifier:Eidentifier},
+
+            res.send(`the identifier located ${UserIdentifier} and event is ${Eidentifier}`),
+            res.redirect('http://localhost300:/scheduleEvent')
+          )
+        
+    } catch (error) {
+        console.log("error while finding the indentifier")
+    }
+
+})
 app.post('/scheduleEvent', async (req, res) => {
 
       calendar.events.insert(
         {
             calendarId: "primary",
-            auth: oauth2client,
+            
             conferenceDataVersion: 1,
             sendNotifications:true,
             requestBody: {
@@ -82,14 +120,14 @@ app.post('/scheduleEvent', async (req, res) => {
                 attendees:[{
                     email:req.body.attendees[0].email
                 }]
-            }
+            },
                
 
-                // conferenceData: {
-                //     createRequest: {
-                //         requestId: uuid(),
-                //     }
-                // },
+                conferenceData: {
+                    createRequest: {
+                        requestId: "thisisrandomkey",
+                    }
+                },
                    
 
 
