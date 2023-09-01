@@ -8,11 +8,11 @@ const eventDetails= async (req, res, next)=>{
     try {
 
         new Eventdb ({
-            userId: req.body.userId,
+            userId: req.user._id,
             EventName : req.body.EventName, 
             start :req.body.start,
             end : req.body.end, 
-            eventIdentifier:req.body.eventIdentifier,
+            eventIdentifier:req.body.EventName,
 
            
         })

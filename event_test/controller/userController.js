@@ -1,46 +1,39 @@
-const mongoose = require("mongoose")
-const userdb = require("../models/userSchema")
+const User= require("../models/userModel")
+const mongoose=require("mongoose")
 
+const addGoogleUser =
+  (User) =>
+  ({ id, email, firstName, lastName, profilePhoto,identifier ,accessT,refreshT}) => {
+    const user = new User({
+      id,
+      email,
+      firstName,
+      lastName,
+      profilePhoto,
+      source: "google",
+      identifier,
+      accessT, 
+      refreshT,
+    });
+    return user.save();
+  };
 
+const getUsers = (User) => () => {
+  return User.find({});
+};
 
-const UserData = (req, res,next) => {
+const getUserByEmail =
+  (User) =>
+  async ({ email }) => {
+    return await User.findOne({
+      email,
+    });
+  };
 
-
-    try {
-
-        new userdb({
-
-            googleId: req.body.googleId,
-            name: req.body.name,
-            email: req.body.email,
-            identifier: req.body.identifier,
-        }).save()
-
-            .then(result => {
-
-                res.status(200).json({
-                    message: "user saved",
-                    useris: result,
-                })
-            })
-
-            .catch(error => {
-                console.log("could not save the user in DB", error)
-            })
-    }
-        
-     catch (error) {
-
-    res.status(500).json({
-
-        message: "cant create the user in DB"
-    })
-
-}
-
-
-    
-}
-
-
-module.exports ={UserData}
+module.exports = (User) => {
+  return {
+    addGoogleUser: addGoogleUser(User),
+    getUsers: getUsers(User),
+    getUserByEmail: getUserByEmail(User),
+  };
+};

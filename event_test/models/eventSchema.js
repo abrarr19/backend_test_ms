@@ -1,12 +1,13 @@
 const mongoose =require('mongoose')
-const User = require("./userSchema")
+
 
 const eventSchema = new mongoose.Schema({
 
     
   userId:{ 
     type : mongoose.Schema.Types.ObjectId,
-    ref: User,
+    required :true,
+    ref: "User",
   },
   EventName: String, 
   startDate:{

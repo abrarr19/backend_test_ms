@@ -87,6 +87,7 @@ app.get('/user/:identifier/events/:eventIdentifier', async (req, res)=>{
             
           ) && await eventdb.findOneAndUpdate (
             {eventIdentifier:Eidentifier},
+            
 
             res.send(`the identifier located ${UserIdentifier} and event is ${Eidentifier}`),
             res.redirect('http://localhost300:/scheduleEvent')
@@ -102,7 +103,7 @@ app.post('/scheduleEvent', async (req, res) => {
       calendar.events.insert(
         {
             calendarId: "primary",
-            
+            auth : oauth2client,
             conferenceDataVersion: 1,
             sendNotifications:true,
             requestBody: {
@@ -116,18 +117,19 @@ app.post('/scheduleEvent', async (req, res) => {
                   dateTime: req.body.end,
                   timeZone: 'GMT-03:00',
                 },
-        
-                attendees:[{
-                    email:req.body.attendees[0].email
-                }]
-            },
-               
 
                 conferenceData: {
                     createRequest: {
                         requestId: "thisisrandomkey",
                     }
                 },
+        
+                attendees:[{
+                    email:req.body.attendees[0].email
+                }]
+            },
+               
+            
                    
 
 

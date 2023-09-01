@@ -1,64 +1,57 @@
+const passport = require("passport");
+const userController = require("../controller");
+const GoogleStrategy = require("passport-google-oauth20").Strategy;
 
-const mongoose = require('mongoose');
-const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const user= require('../models/userSchema')
+passport.use(
+  new GoogleStrategy(
+    {
+      callbackURL: "http://localhost:5000/auth/google/callback",
+      clientID: process.env.CLIENT_ID,
+      clientSecret: process.env.CLIENT_SECRET,
+    },
+    async (accessToken, refreshToken, profile, done) => {
+      const id = profile.id;
+      const email = profile.emails[0].value;
+      const firstName = profile.name.givenName;
+      const lastName = profile.name.familyName;
+      const profilePhoto = profile.photos[0].value;
+      const source = "google";
+      const identifier =profile.name.givenName+profile.name.familyName;
+      const accessT=accessToken;
+      const refreshT=refreshToken;
+      
+      // refreshToken;
 
+      console.log("refreshtoke",refreshT)
 
-const passport=passport.use(new GoogleStrategy({
+      const currentUser = await userController.getUserByEmail({
+        email,
+      });
 
-    clientID:process.env.CLIENT_ID,
-    clientSecret:process.env.CLIENT_SECRET,
-    callbackURL:"/auth/google/callback"
-}, 
+      if (!currentUser) {
+        const newUser = await userController.addGoogleUser({
+          id,
+          email,
+          firstName,
+          lastName,
+          profilePhoto,
+          identifier,
+          accessT,
+          refreshT,
+          
+        });
+        return done(null, newUser);
+      }
 
-(accessToken, refreshToken, profile, done)=>{
+      if (currentUser.source != "google") {
+        //return error
+        return done(null, false, {
+          message: `You have previously signed up with a different signin method`,
+        });
+      }
 
-  user.findOne({
-    googleId:profile.id
-  })
-  .then((existingUser)=>{
-
-    if(existingUser){
-    done(null,existingUser)
-
+      currentUser.lastVisited = new Date();
+      return done(null, currentUser);
     }
-
-    else{
-
-        const newuser= new user({
-            googleId:profile.id, 
-            name:profile.displayName, 
-            email :profile.email[0].value,
-        })
-
-        newuser.save()
-        .then((saveduser)=>{
-            done(null,saveduser)
-        })
-        .catch((err)=>{
-
-            console.log("user was not saved")
-            console.log(err)
-            
-
-        })
-    }
-  })
-  
-}
-
-
-
-))
-
-passport.serializeUser((user, done) => {
-    done(null, user);
-  });
-
-
-  passport.deserializeUser((user, done) => {
-    done(null, user);
-  });
-  
-module.exports= passport;
+  )
+);
