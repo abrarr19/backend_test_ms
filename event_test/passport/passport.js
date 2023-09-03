@@ -8,6 +8,7 @@ passport.use(
       callbackURL: "http://localhost:5000/auth/google/callback",
       clientID: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
+      scope:"https://www.googleapis.com/auth/calendar.events"
     },
     async (accessToken, refreshToken, profile, done) => {
       const id = profile.id;
@@ -22,7 +23,7 @@ passport.use(
       
       // refreshToken;
 
-      console.log("refreshtoke",refreshT)
+      console.log("refreshtoke",refreshT,+ "acccess toke", accessT )
 
       const currentUser = await userController.getUserByEmail({
         email,

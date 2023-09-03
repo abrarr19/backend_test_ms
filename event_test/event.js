@@ -5,7 +5,7 @@ const { uuid } = require('uuidv4')
 const mongoose = require("mongoose")
 const Event= require("./models/eventSchema")
 const db=require("./db/db")
-const signup=require('./routes/SignUp')
+// const signup=require('./routes/SignUp')
 
 const express= require("express")
 
@@ -24,7 +24,7 @@ const SCOPE = 'https://www.googleapis.com/auth/calendar'
 
 const calendar = google.calendar({
     version: "v3",
-    auth: process.env.GOOGLEAPI
+    auth: oauth2client
 })
 
 const app = express()
@@ -36,7 +36,7 @@ app.get('/', (req, res) => {
     res.send("this is working")
 })
 
-app.use('/',signup)
+// app.use('/',signup)
 
 
 
@@ -102,8 +102,9 @@ app.post('/scheduleEvent', async (req, res) => {
 
       calendar.events.insert(
         {
-            calendarId: "primary",
-            auth : oauth2client,
+            calendarId: "abhii.raj19@gmail.com",
+            auth:oauth2client,
+           
             conferenceDataVersion: 1,
             sendNotifications:true,
             requestBody: {
