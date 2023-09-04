@@ -7,6 +7,7 @@ const session=require("express-session")
 const flash= require("express-flash")
 const User =require("./models/userModel")
 const { googleapis, google } = require('googleapis')
+const oauth= require("./passport/passport")
 
 const file= require("./Calenkey.json")
 // 
@@ -60,7 +61,7 @@ app.use(passport.session());
 app.get(
   "/auth/google",
   passport.authenticate("google", {
-    scope: ["profile","email","https://www.googleapis.com/auth/calendar.events"],
+    scope: ["profile","email","https://www.googleapis.com/auth/calendar"],
     accessType: 'offline',
      approvalPrompt: 'force' ,
   }),
@@ -77,18 +78,42 @@ app.get(
     failureFlash: true,
     successFlash: "Successfully logged in!",
     
-  })
+  }),
+
+  // async (req, res)=>{
+
+  //   const code = req.query.code
+
+  //   const { tokens } = await oauth.getToken(code)
+  //   oauth.setCredentials(tokens)
+  //   res.redirect('/profile')
+  // }
 );
 
-const auth = new google.auth.GoogleAuth({
-  keyFile:'./Calenkey.json',
-  scopes: ["https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/calendar.events"],
-});
+// const auth = new google.auth.JWT({
+//   keyFile:'./Calenkey.json',
+//   scopes: ["https://www.googleapis.com/auth/calendar"],
+// });
 
+
+const oauth2client = new google.auth.OAuth2(
+  process.env.CLIENT_ID,
+  process.env.CLIENT_SECRET,
+  "http://localhost:5000/auth/google/callback",
+  
+
+)
+
+oauth2client.setCredentials({
+
+  access_token: "ya29.a0AfB_byBchN1WEOZdrJ-zI3DI18z_XwVoMu8f7EdInqGWeGGfHQO679AE_XS2l4nwJ8u4n36ZJLYTtkyv6adEnsNjhEJRzqJrWdrU2d1WQyT4Fw9HJqJWCMgANfFteEA-whTj-gWF5ju4mVawSv5fulfZUKxRNY6Os3CQWQaCgYKAXMSARESFQHsvYls8zNj7ehCEd-uVH0KrXtkzA0173",
+
+  refresh_token:"1//0gesbObhimRVGCgYIARAAGBASNwF-L9Ir5xJm9eopraZqkH02jHZfm7jFUmG0HB6AvT_aiGj5VoS48STMK4-KXpSxfQvY6HA8bzg"
+})
 
 const cal = google.calendar({
   version: "v3",
-  auth :auth
+ 
 
 })
 
@@ -114,12 +139,22 @@ app.post("/user/:identifier", async(req,res)=>{
 
      else{
 
-      console.log(user.email)
+    //   console.log(user)
+    // res.json({
+    //   user:user
+    // })}  
+    oauth2client.setCredentials({
+
+      
+    
+      refresh_token:user.refreshT
+    })
+      
         
       cal.events.insert(
         {
             calendarId: "primary",
-             auth:auth,
+             auth:oauth2client,
             conferenceDataVersion: 1,
             sendNotifications:true,
             requestBody: {
@@ -189,6 +224,46 @@ app.post("/getValidToken", async (req, res) => {
 });
 
 
+
+app.post('/create', (req, res)=>{
+  cal.events.insert(
+    {
+        calendarId: "primary",
+         auth:oauth2client,
+        conferenceDataVersion: 1,
+        sendNotifications:true,
+        requestBody: {
+            summary: req.body.summary,
+            description: req.body.description,
+            start: {
+              dateTime: req.body.start,
+              timeZone: 'GMT-03:00',
+            },
+            end: {
+              dateTime: req.body.end,
+              timeZone: 'GMT-03:00',
+            },
+
+            conferenceData: {
+                createRequest: {
+                    requestId: "thisisrandomkey",
+                }
+            },
+    
+            attendees:[{
+                email:req.body.attendees[0].email
+            }]
+        },
+
+      })
+
+
+      res.json({
+        result:"event created"
+      })
+
+  
+})
 
 
 

@@ -2,13 +2,13 @@ const passport = require("passport");
 const userController = require("../controller");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 
-passport.use(
+const oauth=passport.use(
   new GoogleStrategy(
     {
       callbackURL: "http://localhost:5000/auth/google/callback",
       clientID: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
-      scope:"https://www.googleapis.com/auth/calendar.events"
+      scope:"https://www.googleapis.com/auth/calendar"
     },
     async (accessToken, refreshToken, profile, done) => {
       const id = profile.id;
@@ -56,3 +56,7 @@ passport.use(
     }
   )
 );
+
+oauth;
+
+module.exports={oauth}
