@@ -4,7 +4,7 @@ const userController= require ("../controller/userController")
 const eventController =require("../controller/eventController")
 
 
-router.post('/signup', userController.UserData);
+// router.post('/signup', userController.UserData);
 
 router.post('/createEvent', eventController.eventDetails)
 

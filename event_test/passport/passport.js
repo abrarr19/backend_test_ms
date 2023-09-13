@@ -57,6 +57,6 @@ const oauth=passport.use(
   )
 );
 
-oauth;
+
 
 module.exports={oauth}

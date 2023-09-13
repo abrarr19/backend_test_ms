@@ -10,23 +10,33 @@ const { googleapis, google } = require('googleapis')
 const oauth= require("./passport/passport")
 
 const file= require("./Calenkey.json")
+const signup =require("./routes/SignUp")
+const slotsRoute=require("./routes/slots")
+
+const cors=require("cors")
 // 
 
 
 const db=require("./db/db")
 
-// app.use(bodyParser.json());
-// app.use(
-//   bodyParser.urlencoded({
-//     extended: true,
-//   })
-// );
+app.use(bodyParser.json());
+
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 // app.engine("html", require("ejs").renderFile);
 // app.use(express.static(__dirname + "/public"));
 
 // app.use(cookieParser());
+
+app.use(cors({
+  origin: 'http://localhost:3000',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // This allows cookies to be sent back and forth
+}));
+
+app.use('/',signup)
+
+app.use('/',slotsRoute)
 
 app.use(session({
 
@@ -38,13 +48,7 @@ app.use(session({
 
 app.use(flash())
 
-app.get("/", (req, res) => {
-  res.send("this is landing page")
-});
 
-app.get("/profile",(req,res)=>{
-    res.send("profile saved")
-})
 
 //...
 const passport = require("passport");
@@ -71,10 +75,9 @@ app.get(
 app.get(
   "/auth/google/callback",
   passport.authenticate("google", {
-    // accessType: 'offline',
-    //  approvalPrompt: 'force',
+    
     failureRedirect: "/",
-    successRedirect: "/profile",
+    successRedirect: "http://localhost:3000/landing",
     failureFlash: true,
     successFlash: "Successfully logged in!",
     
@@ -139,7 +142,7 @@ app.post("/user/:identifier", async(req,res)=>{
 
      else{
 
-    //   console.log(user)
+      console.log(user)
     // res.json({
     //   user:user
     // })}  
@@ -197,8 +200,18 @@ app.post("/user/:identifier", async(req,res)=>{
 
 //get token using refresh token 
 
-app.post("/getValidToken", async (req, res) => {
+app.get("/gettoken/user/:identifier", async (req, res) => {
+  const userId= req.params.identifier;
+
+ 
   try {
+
+    const user = await User.findOneAndUpdate({
+
+      identifier:userId,})
+
+
+      const refresh= user.refreshT
     const request = await fetch("https://www.googleapis.com/oauth2/v4/token", {
       method: "POST",
       headers: {
@@ -207,7 +220,7 @@ app.post("/getValidToken", async (req, res) => {
       body: JSON.stringify({
         client_id: process.env.CLIENT_ID,
         client_secret: process.env.CLIENT_SECRET,
-        refresh_token: req.body.refresh,
+        refresh_token: refresh,
         grant_type: "refresh_token",
       }),
     });
@@ -216,6 +229,7 @@ app.post("/getValidToken", async (req, res) => {
     console.log("server 74 | data", data);
 
     res.json({
+      user,
       accessToken: data.access_token,
     });
   } catch (error) {
@@ -225,45 +239,7 @@ app.post("/getValidToken", async (req, res) => {
 
 
 
-app.post('/create', (req, res)=>{
-  cal.events.insert(
-    {
-        calendarId: "primary",
-         auth:oauth2client,
-        conferenceDataVersion: 1,
-        sendNotifications:true,
-        requestBody: {
-            summary: req.body.summary,
-            description: req.body.description,
-            start: {
-              dateTime: req.body.start,
-              timeZone: 'GMT-03:00',
-            },
-            end: {
-              dateTime: req.body.end,
-              timeZone: 'GMT-03:00',
-            },
 
-            conferenceData: {
-                createRequest: {
-                    requestId: "thisisrandomkey",
-                }
-            },
-    
-            attendees:[{
-                email:req.body.attendees[0].email
-            }]
-        },
-
-      })
-
-
-      res.json({
-        result:"event created"
-      })
-
-  
-})
 
 
 
