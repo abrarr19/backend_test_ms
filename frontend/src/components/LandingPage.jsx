@@ -278,7 +278,7 @@ const LandingPage = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <Mountain className="h-8 w-8 text-teal-400" />
+                <Mountain className="h-8 w-8 text-[#FF7B39]" />
                 <span className="text-xl font-bold">Tripoday Holidays</span>
               </div>
               <p className="text-gray-400">Your trusted partner for unforgettable Kashmir experiences.</p>
@@ -287,26 +287,26 @@ const LandingPage = () => {
               <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
               <div className="space-y-3 text-gray-400">
                 <div className="flex items-start space-x-2">
-                  <MapPin className="h-5 w-5 text-teal-400 mt-0.5 flex-shrink-0" />
+                  <MapPin className="h-5 w-5 text-[#FF7B39] mt-0.5 flex-shrink-0" />
                   <span>7 Square Mall, Shah Anwar Colony, Hyderpora, Srinagar, Jammu and Kashmir 190014</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Phone className="h-5 w-5 text-teal-400" />
+                  <Phone className="h-5 w-5 text-[#FF7B39]" />
                   <span>+91 98765 43210</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Clock className="h-5 w-5 text-teal-400" />
-                  <span className="font-semibold text-teal-400">Open 24 Hours</span>
+                  <Clock className="h-5 w-5 text-[#FF7B39]" />
+                  <span className="font-semibold text-[#FF7B39]">Open 24 Hours</span>
                 </div>
               </div>
             </div>
             <div>
               <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
               <div className="space-y-2 text-gray-400">
-                <p className="hover:text-teal-400 cursor-pointer transition-colors">Kashmir Packages</p>
-                <p className="hover:text-teal-400 cursor-pointer transition-colors">Honeymoon Tours</p>
-                <p className="hover:text-teal-400 cursor-pointer transition-colors">Family Holidays</p>
-                <p className="hover:text-teal-400 cursor-pointer transition-colors">Custom Trips</p>
+                <p className="hover:text-[#FF7B39] cursor-pointer transition-colors">Kashmir Packages</p>
+                <p className="hover:text-[#FF7B39] cursor-pointer transition-colors">Honeymoon Tours</p>
+                <p className="hover:text-[#FF7B39] cursor-pointer transition-colors">Family Holidays</p>
+                <p className="hover:text-[#FF7B39] cursor-pointer transition-colors">Custom Trips</p>
               </div>
             </div>
           </div>
