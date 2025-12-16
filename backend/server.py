@@ -142,6 +142,39 @@ async def get_status_checks():
     
     return status_checks
 
+@api_router.post("/leads", response_model=Lead)
+async def submit_lead(lead_input: LeadCreate):
+    """Submit a lead and send email notification"""
+    try:
+        # Create lead object
+        lead_obj = Lead(**lead_input.model_dump())
+        
+        # Save to MongoDB
+        doc = lead_obj.model_dump()
+        doc['timestamp'] = doc['timestamp'].isoformat()
+        await db.leads.insert_one(doc)
+        
+        # Send email notification
+        email_sent = send_lead_email(lead_input)
+        
+        if not email_sent:
+            logger.warning(f"Lead saved but email failed for {lead_input.email}")
+        
+        return lead_obj
+        
+    except Exception as e:
+        logger.error(f"Error submitting lead: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to submit lead. Please try again.")
+
+@api_router.get("/leads", response_model=List[Lead])
+async def get_leads():
+    """Get all leads (for admin purposes)"""
+    leads = await db.leads.find({}, {"_id": 0}).to_list(1000)
+    for lead in leads:
+        if isinstance(lead.get('timestamp'), str):
+            lead['timestamp'] = datetime.fromisoformat(lead['timestamp'])
+    return leads
+
 # Include the router in the main app
 app.include_router(api_router)
 
