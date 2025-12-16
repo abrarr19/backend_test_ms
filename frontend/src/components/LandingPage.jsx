@@ -63,21 +63,21 @@ const LandingPage = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 hero-gradient">
         <div className="container mx-auto text-center max-w-4xl">
-          <Badge className="mb-4 bg-teal-100 text-teal-800 hover:bg-teal-100">
+          <Badge className="mb-4 bg-orange-100 text-[#FF7B39] hover:bg-orange-100">
             <Clock className="h-3 w-3 mr-1" />
             Open 24 Hours
           </Badge>
           <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            Discover the Paradise of <span className="text-teal-600">Kashmir</span>
+            Discover the Paradise of <span className="text-[#cc0e00]">Kashmir</span>
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             Experience unforgettable journeys with Kashmir's most trusted travel agency. Best prices, expert guidance, and memories that last forever.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-            <Button size="lg" className="bg-teal-600 hover:bg-teal-700 text-lg px-8 py-6">
+            <Button size="lg" className="bg-[#cc0e00] hover:bg-[#a00b00] text-lg px-8 py-6">
               Get Free Quote
             </Button>
-            <Button size="lg" variant="outline" className="border-teal-600 text-teal-600 hover:bg-teal-50 text-lg px-8 py-6">
+            <Button size="lg" variant="outline" className="border-[#cc0e00] text-[#cc0e00] hover:bg-red-50 text-lg px-8 py-6">
               <Phone className="h-5 w-5 mr-2" />
               Call Now
             </Button>
@@ -86,19 +86,19 @@ const LandingPage = () => {
           {/* Trust Indicators */}
           <div className="flex flex-wrap justify-center gap-8 mt-12">
             <div className="flex items-center space-x-2">
-              <CheckCircle2 className="h-5 w-5 text-teal-600" />
+              <CheckCircle2 className="h-5 w-5 text-[#cc0e00]" />
               <span className="text-gray-700 font-medium">Local Expertise</span>
             </div>
             <div className="flex items-center space-x-2">
-              <CheckCircle2 className="h-5 w-5 text-teal-600" />
+              <CheckCircle2 className="h-5 w-5 text-[#cc0e00]" />
               <span className="text-gray-700 font-medium">Best Prices</span>
             </div>
             <div className="flex items-center space-x-2">
-              <CheckCircle2 className="h-5 w-5 text-teal-600" />
+              <CheckCircle2 className="h-5 w-5 text-[#cc0e00]" />
               <span className="text-gray-700 font-medium">Friendly Staff</span>
             </div>
             <div className="flex items-center space-x-2">
-              <CheckCircle2 className="h-5 w-5 text-teal-600" />
+              <CheckCircle2 className="h-5 w-5 text-[#cc0e00]" />
               <span className="text-gray-700 font-medium">24/7 Support</span>
             </div>
           </div>
