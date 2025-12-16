@@ -110,16 +110,12 @@ const LandingPage = () => {
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-lg">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center">
             <img 
-              src="https://customer-assets.emergentagent.com/job_tripoday-tours/artifacts/0l3mxznf_IMG_0559%20%281%29.PNG" 
+              src="https://customer-assets.emergentagent.com/job_tripform-landing/artifacts/e7qhjneg_IMG_0560%20%281%29.PNG" 
               alt="Tripoday Holidays Logo" 
-              className="h-16 md:h-20"
+              className="h-14 md:h-16"
             />
-            <div className="flex flex-col">
-              <h1 className="text-xl md:text-3xl font-bold text-[#E62020] leading-tight">Tripoday Holidays</h1>
-              <p className="text-xs md:text-sm text-gray-600">Make Your Trips Everyday</p>
-            </div>
           </div>
           <div className="flex items-center space-x-3">
             <div className="hidden md:flex items-center text-sm text-gray-900 bg-gray-100 px-3 py-2 rounded-lg">
