@@ -286,7 +286,7 @@ const LandingPage = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button onClick={scrollToForm} className="w-full bg-[#E62020] hover:bg-[#cc0e00] text-white py-6 text-lg font-bold shadow-lg rounded-full">
+                  <Button onClick={scrollToForm} className="w-full bg-black hover:bg-gray-900 text-white py-6 text-lg font-bold shadow-lg rounded-full">
                     Book Now
                   </Button>
                 </CardContent>
