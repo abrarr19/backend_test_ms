@@ -40,6 +40,79 @@ class StatusCheck(BaseModel):
 class StatusCheckCreate(BaseModel):
     client_name: str
 
+# Lead capture model
+class LeadCreate(BaseModel):
+    full_name: str
+    phone: str
+    email: str
+    destination: str
+    travel_date: Optional[str] = ""
+    travelers: Optional[str] = ""
+
+class Lead(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    full_name: str
+    phone: str
+    email: str
+    destination: str
+    travel_date: Optional[str] = ""
+    travelers: Optional[str] = ""
+    timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
+def send_lead_email(lead: LeadCreate) -> bool:
+    """Send lead details via Gmail SMTP"""
+    try:
+        smtp_email = os.environ.get('SMTP_EMAIL')
+        smtp_password = os.environ.get('SMTP_PASSWORD')
+        recipient_email = os.environ.get('RECIPIENT_EMAIL')
+        
+        if not all([smtp_email, smtp_password, recipient_email]):
+            logger.error("Missing SMTP configuration")
+            return False
+        
+        # Create email message
+        msg = MIMEMultipart()
+        msg['From'] = smtp_email
+        msg['To'] = recipient_email
+        msg['Subject'] = f"New Lead from Tripoday - {lead.full_name}"
+        
+        # Email body
+        body = f"""
+New Lead Received from Tripoday Holidays Website!
+
+Customer Details:
+-----------------
+Full Name: {lead.full_name}
+Phone: {lead.phone}
+Email: {lead.email}
+Destination: {lead.destination}
+Travel Date: {lead.travel_date or 'Not specified'}
+Number of Travelers: {lead.travelers or 'Not specified'}
+
+Submitted at: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')} UTC
+
+---
+This is an automated message from Tripoday Holidays Lead Form.
+        """
+        
+        msg.attach(MIMEText(body, 'plain'))
+        
+        # Connect to Gmail SMTP and send
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.starttls()
+        server.login(smtp_email, smtp_password)
+        server.send_message(msg)
+        server.quit()
+        
+        logger.info(f"Lead email sent successfully for {lead.email}")
+        return True
+        
+    except Exception as e:
+        logger.error(f"Failed to send email: {str(e)}")
+        return False
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
