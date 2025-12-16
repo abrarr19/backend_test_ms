@@ -5,7 +5,7 @@ import { Input } from './ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { Badge } from './ui/badge';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from './ui/dialog';
-import { Star, MapPin, Clock, CheckCircle2, MessageCircle, Award, Headphones, Shield, TrendingDown } from 'lucide-react';
+import { Star, MapPin, Clock, CheckCircle2, MessageCircle, Award, Headphones, Shield, TrendingDown, Sparkles } from 'lucide-react';
 import { mockData } from '../utils/mock';
 
 const LandingPage = () => {
@@ -78,29 +78,30 @@ const LandingPage = () => {
       {/* WhatsApp Floating Button */}
       <button
         onClick={openWhatsApp}
-        className="fixed bottom-6 left-6 z-50 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full p-4 shadow-lg transition-all duration-300 hover:scale-110"
+        className="fixed bottom-6 left-6 z-50 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full p-4 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 animate-pulse"
         aria-label="Contact on WhatsApp"
       >
-        <MessageCircle className="h-6 w-6" />
+        <MessageCircle className="h-7 w-7" />
       </button>
 
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm border-b border-gray-800">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm border-b border-gray-800 shadow-lg">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-          <div className="flex items-center">
+          <div className="flex flex-col">
             <img 
               src="https://customer-assets.emergentagent.com/job_tripoday-tours/artifacts/0k3d5d0a_IMG_0561%20%281%29.PNG" 
               alt="Tripoday Holidays Logo" 
-              className="h-12 md:h-14"
+              className="h-16 md:h-20"
             />
+            <span className="text-xs text-gray-400 mt-1">Tripoday India Pvt Ltd</span>
           </div>
           <div className="flex items-center space-x-3">
-            <div className="hidden md:flex items-center text-sm text-white">
+            <div className="hidden md:flex items-center text-sm text-white bg-white/10 px-3 py-2 rounded-lg">
               <Star className="h-4 w-4 text-yellow-400 fill-yellow-400 mr-1" />
               <span className="font-semibold">4.7</span>
               <span className="ml-1 text-gray-300">(175+)</span>
             </div>
-            <Button onClick={openForm} size="sm" className="bg-white text-black hover:bg-gray-200">
+            <Button onClick={openForm} size="sm" className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black hover:from-yellow-500 hover:to-yellow-600 font-semibold shadow-lg">
               Get Quote
             </Button>
           </div>
@@ -108,82 +109,116 @@ const LandingPage = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-28 pb-16 px-4 bg-gradient-to-br from-gray-900 via-black to-gray-900">
-        <div className="container mx-auto text-center max-w-5xl">
-          <Badge className="mb-4 bg-white/10 text-white hover:bg-white/20 text-sm backdrop-blur-sm">
-            <Clock className="h-3 w-3 mr-1" />
-            Open 24 Hours
+      <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
+        {/* Animated background elements */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-400 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-400 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        </div>
+        
+        <div className="container mx-auto text-center max-w-5xl relative z-10">
+          <Badge className="mb-6 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black hover:from-yellow-500 hover:to-yellow-600 text-sm px-4 py-2 shadow-lg">
+            <Clock className="h-4 w-4 mr-2" />
+            Open 24 Hours - Book Anytime!
           </Badge>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-            Best Holiday & International Tour Packages<br />
-            <span className="text-yellow-400">Book Your Dream Trip Today</span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            Best Holiday & International<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">Tour Packages</span><br />
+            <span className="text-3xl md:text-5xl text-gray-300">Book Your Dream Trip Today</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 mb-6 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto font-light">
             Affordable Honeymoon, Family & Group Tour Packages with Complete Support
           </p>
-          <Button onClick={openForm} size="lg" className="bg-white text-black hover:bg-gray-200 text-lg px-10 py-6 shadow-xl">
-            Get Free Quote
-          </Button>
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-6">
+            <Button onClick={openForm} size="lg" className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black hover:from-yellow-500 hover:to-yellow-600 text-xl px-12 py-7 shadow-2xl font-bold">
+              <Sparkles className="h-5 w-5 mr-2" />
+              Get Free Quote Now
+            </Button>
+            <Button onClick={openWhatsApp} size="lg" variant="outline" className="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black text-xl px-12 py-7 font-bold">
+              <MessageCircle className="h-5 w-5 mr-2" />
+              WhatsApp Us
+            </Button>
+          </div>
+          <p className="text-sm text-gray-400 mb-12">
+            <CheckCircle2 className="h-4 w-4 inline mr-1 text-green-400" />
+            Trusted by 17K+ Happy Travelers | 13+ Years Experience
+          </p>
           
           {/* Trust Indicators */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-            <div className="flex flex-col items-center space-y-2">
-              <CheckCircle2 className="h-6 w-6 text-yellow-400" />
-              <span className="text-sm md:text-base text-gray-300 font-medium">Local Expertise</span>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+            <div className="flex flex-col items-center space-y-3 p-4 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all">
+              <div className="w-14 h-14 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center">
+                <CheckCircle2 className="h-7 w-7 text-black" />
+              </div>
+              <span className="text-base md:text-lg text-white font-semibold">Local Expertise</span>
             </div>
-            <div className="flex flex-col items-center space-y-2">
-              <TrendingDown className="h-6 w-6 text-yellow-400" />
-              <span className="text-sm md:text-base text-gray-300 font-medium">Best Prices</span>
+            <div className="flex flex-col items-center space-y-3 p-4 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all">
+              <div className="w-14 h-14 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center">
+                <TrendingDown className="h-7 w-7 text-black" />
+              </div>
+              <span className="text-base md:text-lg text-white font-semibold">Best Prices</span>
             </div>
-            <div className="flex flex-col items-center space-y-2">
-              <Headphones className="h-6 w-6 text-yellow-400" />
-              <span className="text-sm md:text-base text-gray-300 font-medium">24/7 Support</span>
+            <div className="flex flex-col items-center space-y-3 p-4 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all">
+              <div className="w-14 h-14 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center">
+                <Headphones className="h-7 w-7 text-black" />
+              </div>
+              <span className="text-base md:text-lg text-white font-semibold">24/7 Support</span>
             </div>
-            <div className="flex flex-col items-center space-y-2">
-              <Award className="h-6 w-6 text-yellow-400" />
-              <span className="text-sm md:text-base text-gray-300 font-medium">Trusted Experts</span>
+            <div className="flex flex-col items-center space-y-3 p-4 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all">
+              <div className="w-14 h-14 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center">
+                <Award className="h-7 w-7 text-black" />
+              </div>
+              <span className="text-base md:text-lg text-white font-semibold">Trusted Experts</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* Kashmir Tour Packages */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-20 px-4 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 bg-yellow-100 text-yellow-800 text-sm px-4 py-2">
+              Most Popular
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Kashmir Tour Packages (4N/5D)
             </h2>
-            <p className="text-lg text-gray-600">Explore the paradise on earth with our curated packages</p>
+            <p className="text-xl text-gray-600">Explore the paradise on earth with our curated packages</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
             {mockData.kashmirPackages.map((pkg, index) => (
-              <Card key={index} className="border-2 hover:border-black hover:shadow-xl transition-all duration-300 overflow-hidden">
-                <div className="h-48 overflow-hidden">
+              <Card key={index} className="border-0 shadow-2xl hover:shadow-3xl transition-all duration-300 overflow-hidden group">
+                <div className="h-56 overflow-hidden relative">
                   <img 
                     src={pkg.image} 
                     alt={pkg.title}
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                </div>
-                <CardHeader className="bg-gradient-to-br from-gray-900 to-black text-white py-6">
-                  <CardTitle className="text-2xl">{pkg.title}</CardTitle>
-                  <CardDescription className="text-white/90 text-base">{pkg.subtitle}</CardDescription>
-                </CardHeader>
-                <CardContent className="pt-6">
-                  <div className="mb-4">
-                    <div className="text-3xl font-bold text-black mb-1">{pkg.price}</div>
-                    <p className="text-sm text-gray-500">{pkg.priceDetails}</p>
+                  <div className="absolute top-4 right-4">
+                    <Badge className="bg-yellow-400 text-black font-bold px-3 py-1">
+                      Hot Deal
+                    </Badge>
                   </div>
-                  <ul className="space-y-2 mb-6">
+                </div>
+                <CardHeader className="bg-gradient-to-br from-gray-900 to-black text-white py-8">
+                  <CardTitle className="text-2xl md:text-3xl">{pkg.title}</CardTitle>
+                  <CardDescription className="text-white/90 text-lg">{pkg.subtitle}</CardDescription>
+                </CardHeader>
+                <CardContent className="pt-8 pb-6 px-6">
+                  <div className="mb-6 text-center">
+                    <div className="text-4xl font-bold text-black mb-2">{pkg.price}</div>
+                    <p className="text-base text-gray-500">{pkg.priceDetails}</p>
+                  </div>
+                  <ul className="space-y-3 mb-8">
                     {pkg.highlights.map((highlight, i) => (
-                      <li key={i} className="flex items-start space-x-2 text-sm">
-                        <CheckCircle2 className="h-4 w-4 text-yellow-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-600">{highlight}</span>
+                      <li key={i} className="flex items-start space-x-3 text-base">
+                        <CheckCircle2 className="h-5 w-5 text-yellow-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">{highlight}</span>
                       </li>
                     ))}
                   </ul>
-                  <Button onClick={scrollToForm} className="w-full bg-black hover:bg-gray-800">
+                  <Button onClick={scrollToForm} className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black hover:from-yellow-500 hover:to-yellow-600 py-6 text-lg font-bold shadow-lg">
                     Enquire Now
                   </Button>
                 </CardContent>
@@ -194,42 +229,50 @@ const LandingPage = () => {
       </section>
 
       {/* International Tour Packages */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 bg-blue-100 text-blue-800 text-sm px-4 py-2">
+              International Destinations
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               International Tour Packages (4N/5D)
             </h2>
-            <p className="text-lg text-gray-600">Discover amazing destinations across the globe</p>
+            <p className="text-xl text-gray-600">Discover amazing destinations across the globe</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
             {mockData.internationalPackages.map((pkg, index) => (
-              <Card key={index} className="border-2 hover:border-black hover:shadow-xl transition-all duration-300 overflow-hidden">
-                <div className="h-48 overflow-hidden">
+              <Card key={index} className="border-0 shadow-2xl hover:shadow-3xl transition-all duration-300 overflow-hidden group">
+                <div className="h-56 overflow-hidden relative">
                   <img 
                     src={pkg.image} 
                     alt={pkg.title}
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                </div>
-                <CardHeader className="bg-gradient-to-br from-gray-900 to-black text-white py-6">
-                  <CardTitle className="text-2xl">{pkg.title}</CardTitle>
-                  <CardDescription className="text-white/90 text-base">{pkg.subtitle}</CardDescription>
-                </CardHeader>
-                <CardContent className="pt-6">
-                  <div className="mb-4">
-                    <div className="text-3xl font-bold text-black mb-1">{pkg.price}</div>
-                    <p className="text-sm text-gray-500">{pkg.priceDetails}</p>
+                  <div className="absolute top-4 right-4">
+                    <Badge className="bg-blue-500 text-white font-bold px-3 py-1">
+                      Trending
+                    </Badge>
                   </div>
-                  <ul className="space-y-2 mb-6">
+                </div>
+                <CardHeader className="bg-gradient-to-br from-gray-900 to-black text-white py-8">
+                  <CardTitle className="text-2xl md:text-3xl">{pkg.title}</CardTitle>
+                  <CardDescription className="text-white/90 text-lg">{pkg.subtitle}</CardDescription>
+                </CardHeader>
+                <CardContent className="pt-8 pb-6 px-6">
+                  <div className="mb-6 text-center">
+                    <div className="text-4xl font-bold text-black mb-2">{pkg.price}</div>
+                    <p className="text-base text-gray-500">{pkg.priceDetails}</p>
+                  </div>
+                  <ul className="space-y-3 mb-8">
                     {pkg.highlights.map((highlight, i) => (
-                      <li key={i} className="flex items-start space-x-2 text-sm">
-                        <CheckCircle2 className="h-4 w-4 text-yellow-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-600">{highlight}</span>
+                      <li key={i} className="flex items-start space-x-3 text-base">
+                        <CheckCircle2 className="h-5 w-5 text-yellow-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">{highlight}</span>
                       </li>
                     ))}
                   </ul>
-                  <Button onClick={scrollToForm} className="w-full bg-black hover:bg-gray-800">
+                  <Button onClick={scrollToForm} className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black hover:from-yellow-500 hover:to-yellow-600 py-6 text-lg font-bold shadow-lg">
                     Book Now
                   </Button>
                 </CardContent>
@@ -240,26 +283,26 @@ const LandingPage = () => {
       </section>
 
       {/* Trust & Conversion Section */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-20 px-4 bg-gray-50">
         <div className="container mx-auto max-w-5xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Why Choose Tripoday Holidays?
             </h2>
-            <p className="text-lg text-gray-600">Your trusted partner for unforgettable journeys</p>
+            <p className="text-xl text-gray-600">Your trusted partner for unforgettable journeys</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-8">
             {mockData.trustPoints.map((point, index) => (
-              <div key={index} className="flex items-start space-x-4 p-6 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors">
-                <div className="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  {point.icon === 'price' && <TrendingDown className="h-6 w-6 text-yellow-600" />}
-                  {point.icon === 'customize' && <Shield className="h-6 w-6 text-yellow-600" />}
-                  {point.icon === 'support' && <Headphones className="h-6 w-6 text-yellow-600" />}
-                  {point.icon === 'expert' && <Award className="h-6 w-6 text-yellow-600" />}
+              <div key={index} className="flex items-start space-x-5 p-8 rounded-2xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-yellow-400">
+                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                  {point.icon === 'price' && <TrendingDown className="h-8 w-8 text-black" />}
+                  {point.icon === 'customize' && <Shield className="h-8 w-8 text-black" />}
+                  {point.icon === 'support' && <Headphones className="h-8 w-8 text-black" />}
+                  {point.icon === 'expert' && <Award className="h-8 w-8 text-black" />}
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{point.title}</h3>
-                  <p className="text-gray-600">{point.description}</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{point.title}</h3>
+                  <p className="text-gray-600 text-lg">{point.description}</p>
                 </div>
               </div>
             ))}
@@ -268,32 +311,32 @@ const LandingPage = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-white">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+          <div className="text-center mb-16">
+            <h3 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               What Our Travelers Say
             </h3>
             <div className="flex justify-center items-center space-x-2 text-yellow-500">
               {[1, 2, 3, 4, 5].map((star) => (
-                <Star key={star} className="h-5 w-5 fill-yellow-500" />
+                <Star key={star} className="h-6 w-6 fill-yellow-500" />
               ))}
-              <span className="ml-2 text-gray-700 font-semibold">4.7 out of 5 (175+ reviews)</span>
+              <span className="ml-3 text-gray-700 font-semibold text-lg">4.7 out of 5 (175+ reviews)</span>
             </div>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-8">
             {mockData.testimonials.map((testimonial, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300 border-2">
+              <Card key={index} className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300">
                 <CardHeader>
-                  <div className="flex items-center space-x-1 mb-2">
+                  <div className="flex items-center space-x-1 mb-3">
                     {[1, 2, 3, 4, 5].map((star) => (
-                      <Star key={star} className="h-4 w-4 fill-yellow-500 text-yellow-500" />
+                      <Star key={star} className="h-5 w-5 fill-yellow-500 text-yellow-500" />
                     ))}
                   </div>
-                  <CardTitle className="text-lg">{testimonial.name}</CardTitle>
+                  <CardTitle className="text-xl">{testimonial.name}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 italic">"{testimonial.review}"</p>
+                  <p className="text-gray-600 italic text-lg">"{testimonial.review}"</p>
                 </CardContent>
               </Card>
             ))}
@@ -302,17 +345,17 @@ const LandingPage = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section id="contact-form-section" className="py-16 px-4 bg-white">
+      <section id="contact-form-section" className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto max-w-2xl">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Plan Your Dream Trip
             </h2>
-            <p className="text-lg text-gray-600">Fill in your details and get the best deals from our experts</p>
+            <p className="text-xl text-gray-600">Fill in your details and get the best deals from our experts</p>
           </div>
-          <Card className="border-2 border-black shadow-2xl">
-            <CardContent className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-5">
+          <Card className="border-0 shadow-2xl">
+            <CardContent className="p-10">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <Input
                     type="text"
@@ -321,7 +364,7 @@ const LandingPage = () => {
                     value={formData.fullName}
                     onChange={handleInputChange}
                     required
-                    className="w-full border-2"
+                    className="w-full border-2 py-6 text-lg"
                   />
                 </div>
                 <div>
@@ -332,7 +375,7 @@ const LandingPage = () => {
                     value={formData.phone}
                     onChange={handleInputChange}
                     required
-                    className="w-full border-2"
+                    className="w-full border-2 py-6 text-lg"
                   />
                 </div>
                 <div>
@@ -343,12 +386,12 @@ const LandingPage = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full border-2"
+                    className="w-full border-2 py-6 text-lg"
                   />
                 </div>
                 <div>
                   <Select value={formData.destination} onValueChange={handleDestinationChange} required>
-                    <SelectTrigger className="w-full border-2">
+                    <SelectTrigger className="w-full border-2 py-6 text-lg">
                       <SelectValue placeholder="Destination Interested In *" />
                     </SelectTrigger>
                     <SelectContent>
@@ -367,7 +410,7 @@ const LandingPage = () => {
                     placeholder="Travel Date (e.g., June 2025)"
                     value={formData.travelDate}
                     onChange={handleInputChange}
-                    className="w-full border-2"
+                    className="w-full border-2 py-6 text-lg"
                   />
                 </div>
                 <div>
@@ -378,13 +421,13 @@ const LandingPage = () => {
                     value={formData.travelers}
                     onChange={handleInputChange}
                     min="1"
-                    className="w-full border-2"
+                    className="w-full border-2 py-6 text-lg"
                   />
                 </div>
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-black hover:bg-gray-800 py-6 text-lg"
+                  className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black hover:from-yellow-500 hover:to-yellow-600 py-7 text-xl font-bold shadow-xl"
                 >
                   {isSubmitting ? 'Submitting...' : 'Get Best Deal'}
                 </Button>
@@ -395,53 +438,59 @@ const LandingPage = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+      <section className="py-20 px-4 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-10 left-10 w-64 h-64 bg-yellow-400 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-80 h-80 bg-yellow-500 rounded-full blur-3xl"></div>
+        </div>
+        <div className="container mx-auto max-w-4xl text-center relative z-10">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">
             Limited Slots Available – Plan Your Trip Now
           </h2>
-          <p className="text-lg md:text-xl mb-8 opacity-90">
+          <p className="text-xl md:text-2xl mb-10 opacity-90">
             Don't miss out on exclusive deals. Our travel experts are ready to help you!
           </p>
-          <Button onClick={openForm} size="lg" className="bg-white text-black hover:bg-gray-200 text-lg px-10 py-6">
+          <Button onClick={openForm} size="lg" className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black hover:from-yellow-500 hover:to-yellow-600 text-xl px-12 py-8 font-bold shadow-2xl">
+            <Sparkles className="h-6 w-6 mr-2" />
             Get Instant Callback
           </Button>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-black text-white py-12 px-4">
+      <footer className="bg-black text-white py-16 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div className="grid md:grid-cols-3 gap-10 mb-10">
             <div>
               <img 
                 src="https://customer-assets.emergentagent.com/job_tripoday-tours/artifacts/0k3d5d0a_IMG_0561%20%281%29.PNG" 
                 alt="Tripoday Holidays Logo" 
-                className="h-12 mb-4"
+                className="h-16 mb-4"
               />
-              <p className="text-gray-400 mb-4">Your trusted partner for unforgettable Kashmir and international experiences.</p>
+              <p className="text-lg font-semibold text-yellow-400 mb-3">Tripoday India Pvt Ltd</p>
+              <p className="text-gray-400 mb-4 text-base">Your trusted partner for unforgettable Kashmir and international experiences.</p>
               <div className="flex items-center text-sm text-gray-400">
-                <Star className="h-4 w-4 text-yellow-400 fill-yellow-400 mr-1" />
+                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400 mr-1" />
                 <span className="font-semibold">4.7</span>
                 <span className="ml-1">(175+ Google Reviews)</span>
               </div>
             </div>
             <div>
-              <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-              <div className="space-y-3 text-gray-400">
-                <div className="flex items-start space-x-2">
-                  <MapPin className="h-5 w-5 text-yellow-400 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm">7 Square Mall, Shah Anwar Colony, Hyderpora, Srinagar, J&K 190014</span>
+              <h4 className="text-xl font-semibold mb-6">Contact Us</h4>
+              <div className="space-y-4 text-gray-400">
+                <div className="flex items-start space-x-3">
+                  <MapPin className="h-6 w-6 text-yellow-400 mt-0.5 flex-shrink-0" />
+                  <span className="text-base">7 Square Mall, Shah Anwar Colony, Hyderpora, Srinagar, J&K 190014</span>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <Clock className="h-5 w-5 text-yellow-400" />
-                  <span className="font-semibold text-yellow-400">Open 24 Hours</span>
+                <div className="flex items-center space-x-3">
+                  <Clock className="h-6 w-6 text-yellow-400" />
+                  <span className="font-semibold text-yellow-400 text-base">Open 24 Hours</span>
                 </div>
               </div>
             </div>
             <div>
-              <h4 className="text-lg font-semibold mb-4">Popular Destinations</h4>
-              <div className="space-y-2 text-gray-400 text-sm">
+              <h4 className="text-xl font-semibold mb-6">Popular Destinations</h4>
+              <div className="space-y-3 text-gray-400 text-base">
                 <p className="hover:text-yellow-400 cursor-pointer transition-colors">Kashmir Packages</p>
                 <p className="hover:text-yellow-400 cursor-pointer transition-colors">Honeymoon Tours</p>
                 <p className="hover:text-yellow-400 cursor-pointer transition-colors">Dubai Tours</p>
@@ -450,7 +499,7 @@ const LandingPage = () => {
               </div>
             </div>
           </div>
-          <div className="border-t border-gray-800 pt-6 text-center text-gray-400 text-sm">
+          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
             <p>&copy; 2025 Tripoday India Pvt Ltd. All rights reserved.</p>
           </div>
         </div>
@@ -462,12 +511,12 @@ const LandingPage = () => {
           {!showThankYou ? (
             <>
               <DialogHeader>
-                <DialogTitle className="text-2xl font-bold text-gray-900">Get Best Deal</DialogTitle>
-                <DialogDescription>
+                <DialogTitle className="text-3xl font-bold text-gray-900">Get Best Deal</DialogTitle>
+                <DialogDescription className="text-base">
                   Fill in your details and our travel expert will contact you shortly
                 </DialogDescription>
               </DialogHeader>
-              <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+              <form onSubmit={handleSubmit} className="space-y-5 mt-4">
                 <div>
                   <Input
                     type="text"
@@ -476,7 +525,7 @@ const LandingPage = () => {
                     value={formData.fullName}
                     onChange={handleInputChange}
                     required
-                    className="w-full"
+                    className="w-full py-6 text-lg"
                   />
                 </div>
                 <div>
@@ -487,7 +536,7 @@ const LandingPage = () => {
                     value={formData.phone}
                     onChange={handleInputChange}
                     required
-                    className="w-full"
+                    className="w-full py-6 text-lg"
                   />
                 </div>
                 <div>
@@ -498,12 +547,12 @@ const LandingPage = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full"
+                    className="w-full py-6 text-lg"
                   />
                 </div>
                 <div>
                   <Select value={formData.destination} onValueChange={handleDestinationChange} required>
-                    <SelectTrigger className="w-full">
+                    <SelectTrigger className="w-full py-6 text-lg">
                       <SelectValue placeholder="Destination Interested In *" />
                     </SelectTrigger>
                     <SelectContent>
@@ -522,7 +571,7 @@ const LandingPage = () => {
                     placeholder="Travel Date (e.g., June 2025)"
                     value={formData.travelDate}
                     onChange={handleInputChange}
-                    className="w-full"
+                    className="w-full py-6 text-lg"
                   />
                 </div>
                 <div>
@@ -533,25 +582,25 @@ const LandingPage = () => {
                     value={formData.travelers}
                     onChange={handleInputChange}
                     min="1"
-                    className="w-full"
+                    className="w-full py-6 text-lg"
                   />
                 </div>
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-black hover:bg-gray-800 py-6 text-lg"
+                  className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black hover:from-yellow-500 hover:to-yellow-600 py-7 text-xl font-bold"
                 >
                   {isSubmitting ? 'Submitting...' : 'Get Best Deal'}
                 </Button>
               </form>
             </>
           ) : (
-            <div className="text-center py-8">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircle2 className="h-10 w-10 text-green-600" />
+            <div className="text-center py-10">
+              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <CheckCircle2 className="h-12 w-12 text-green-600" />
               </div>
-              <DialogTitle className="text-2xl font-bold text-gray-900 mb-2">Thank You!</DialogTitle>
-              <DialogDescription className="text-base">
+              <DialogTitle className="text-3xl font-bold text-gray-900 mb-3">Thank You!</DialogTitle>
+              <DialogDescription className="text-lg">
                 Your inquiry has been submitted successfully. Our travel expert will contact you within 24 hours.
               </DialogDescription>
             </div>

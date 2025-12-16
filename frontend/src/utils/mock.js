@@ -5,7 +5,7 @@ export const mockData = {
       subtitle: '4 Nights / 5 Days',
       price: '₹28,000',
       priceDetails: 'per couple',
-      image: 'https://images.unsplash.com/photo-1661747340818-df15f186554e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHxLYXNobWlyJTIwdmFsbGV5fGVufDB8fHx8MTc2NTg4NzE5Mnww&ixlib=rb-4.1.0&q=85',
+      image: 'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHxLYXNobWlyJTIwU3JpbmFnYXIlMjBob3VzZWJvYXR8ZW58MHx8fHwxNzY1ODg3NTk3fDA&ixlib=rb-4.1.0&q=85',
       highlights: [
         'Srinagar, Gulmarg, Pahalgam',
         'Luxury Houseboat Stay',
@@ -19,7 +19,7 @@ export const mockData = {
       subtitle: '4 Nights / 5 Days',
       price: '₹14,999',
       priceDetails: 'per person',
-      image: 'https://images.unsplash.com/photo-1661747340818-df15f186554e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHxLYXNobWlyJTIwdmFsbGV5fGVufDB8fHx8MTc2NTg4NzE5Mnww&ixlib=rb-4.1.0&q=85',
+      image: 'https://images.pexels.com/photos/19570294/pexels-photo-19570294.jpeg',
       highlights: [
         'Srinagar, Gulmarg, Sonamarg',
         'Hotel Stay with Breakfast',
@@ -33,7 +33,7 @@ export const mockData = {
       subtitle: '4 Nights / 5 Days',
       price: '₹13,500',
       priceDetails: 'per person',
-      image: 'https://images.unsplash.com/photo-1661747340818-df15f186554e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHxLYXNobWlyJTIwdmFsbGV5fGVufDB8fHx8MTc2NTg4NzE5Mnww&ixlib=rb-4.1.0&q=85',
+      image: 'https://images.unsplash.com/photo-1716099933931-628733759685?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwzfHxQYWhhbGdhbSUyMEthc2htaXIlMjB2YWxsZXl8ZW58MHx8fHwxNzY1ODg3NjEwfDA&ixlib=rb-4.1.0&q=85',
       highlights: [
         'Complete Kashmir Tour',
         'Group-Friendly Hotels',
