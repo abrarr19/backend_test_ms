@@ -203,7 +203,7 @@ const LandingPage = () => {
                     </Badge>
                   </div>
                 </div>
-                <CardHeader className="bg-gradient-to-br from-gray-900 to-black text-white py-8">
+                <CardHeader className="bg-[#E62020] text-white py-8">
                   <CardTitle className="text-2xl md:text-3xl">{pkg.title}</CardTitle>
                   <CardDescription className="text-white/90 text-lg">{pkg.subtitle}</CardDescription>
                 </CardHeader>
@@ -257,7 +257,7 @@ const LandingPage = () => {
                     </Badge>
                   </div>
                 </div>
-                <CardHeader className="bg-gradient-to-br from-gray-900 to-black text-white py-8">
+                <CardHeader className="bg-[#E62020] text-white py-8">
                   <CardTitle className="text-2xl md:text-3xl">{pkg.title}</CardTitle>
                   <CardDescription className="text-white/90 text-lg">{pkg.subtitle}</CardDescription>
                 </CardHeader>
