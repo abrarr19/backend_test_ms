@@ -170,29 +170,29 @@ const LandingPage = () => {
           
           {/* Trust Indicators */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
-            <div className="flex flex-col items-center space-y-3 p-4 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all">
-              <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center">
-                <CheckCircle2 className="h-7 w-7 text-[#E62020]" />
+            <div className="flex flex-col items-center space-y-3 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all shadow-md">
+              <div className="w-14 h-14 bg-[#E62020] rounded-full flex items-center justify-center">
+                <CheckCircle2 className="h-7 w-7 text-white" />
               </div>
-              <span className="text-base md:text-lg text-white font-semibold">Local Expertise</span>
+              <span className="text-base md:text-lg text-gray-900 font-semibold">Local Expertise</span>
             </div>
-            <div className="flex flex-col items-center space-y-3 p-4 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all">
-              <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center">
-                <TrendingDown className="h-7 w-7 text-[#E62020]" />
+            <div className="flex flex-col items-center space-y-3 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all shadow-md">
+              <div className="w-14 h-14 bg-[#E62020] rounded-full flex items-center justify-center">
+                <TrendingDown className="h-7 w-7 text-white" />
               </div>
-              <span className="text-base md:text-lg text-white font-semibold">Best Prices</span>
+              <span className="text-base md:text-lg text-gray-900 font-semibold">Best Prices</span>
             </div>
-            <div className="flex flex-col items-center space-y-3 p-4 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all">
-              <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center">
-                <Headphones className="h-7 w-7 text-[#E62020]" />
+            <div className="flex flex-col items-center space-y-3 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all shadow-md">
+              <div className="w-14 h-14 bg-[#E62020] rounded-full flex items-center justify-center">
+                <Headphones className="h-7 w-7 text-white" />
               </div>
-              <span className="text-base md:text-lg text-white font-semibold">24/7 Support</span>
+              <span className="text-base md:text-lg text-gray-900 font-semibold">24/7 Support</span>
             </div>
-            <div className="flex flex-col items-center space-y-3 p-4 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all">
-              <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center">
-                <Award className="h-7 w-7 text-[#E62020]" />
+            <div className="flex flex-col items-center space-y-3 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all shadow-md">
+              <div className="w-14 h-14 bg-[#E62020] rounded-full flex items-center justify-center">
+                <Award className="h-7 w-7 text-white" />
               </div>
-              <span className="text-base md:text-lg text-white font-semibold">Trusted Experts</span>
+              <span className="text-base md:text-lg text-gray-900 font-semibold">Trusted Experts</span>
             </div>
           </div>
         </div>
