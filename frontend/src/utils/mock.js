@@ -5,6 +5,7 @@ export const mockData = {
       subtitle: '4 Nights / 5 Days',
       price: '₹28,000',
       priceDetails: 'per couple',
+      image: 'https://images.unsplash.com/photo-1661747340818-df15f186554e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHxLYXNobWlyJTIwdmFsbGV5fGVufDB8fHx8MTc2NTg4NzE5Mnww&ixlib=rb-4.1.0&q=85',
       highlights: [
         'Srinagar, Gulmarg, Pahalgam',
         'Luxury Houseboat Stay',
@@ -18,6 +19,7 @@ export const mockData = {
       subtitle: '4 Nights / 5 Days',
       price: '₹14,999',
       priceDetails: 'per person',
+      image: 'https://images.unsplash.com/photo-1661747340818-df15f186554e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHxLYXNobWlyJTIwdmFsbGV5fGVufDB8fHx8MTc2NTg4NzE5Mnww&ixlib=rb-4.1.0&q=85',
       highlights: [
         'Srinagar, Gulmarg, Sonamarg',
         'Hotel Stay with Breakfast',
@@ -31,6 +33,7 @@ export const mockData = {
       subtitle: '4 Nights / 5 Days',
       price: '₹13,500',
       priceDetails: 'per person',
+      image: 'https://images.unsplash.com/photo-1661747340818-df15f186554e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHxLYXNobWlyJTIwdmFsbGV5fGVufDB8fHx8MTc2NTg4NzE5Mnww&ixlib=rb-4.1.0&q=85',
       highlights: [
         'Complete Kashmir Tour',
         'Group-Friendly Hotels',
@@ -46,6 +49,7 @@ export const mockData = {
       subtitle: '4 Nights / 5 Days',
       price: '₹45,999',
       priceDetails: 'per person',
+      image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxEdWJhaSUyMHNreWxpbmV8ZW58MHx8fHwxNzY1ODg3MjA0fDA&ixlib=rb-4.1.0&q=85',
       highlights: [
         'Burj Khalifa & Desert Safari',
         '4-Star Hotel Stay',
@@ -59,6 +63,7 @@ export const mockData = {
       subtitle: '4 Nights / 5 Days',
       price: '₹1,39,000',
       priceDetails: 'per person (All Inclusive)',
+      image: 'https://images.unsplash.com/photo-1622779536320-bb5f5b501a06?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwxfHxNYWxkaXZlcyUyMGJlYWNofGVufDB8fHx8MTc2NTg4NzE5OHww&ixlib=rb-4.1.0&q=85',
       highlights: [
         'Luxury Beach Resort',
         'Water Villa Stay',
@@ -72,6 +77,7 @@ export const mockData = {
       subtitle: '4 Nights / 5 Days',
       price: '₹19,999',
       priceDetails: 'per person',
+      image: 'https://images.unsplash.com/photo-1704314315344-cd10b9779ce6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwxfHxUaGFpbGFuZCUyMGJlYWNofGVufDB8fHx8MTc2NTg4NzIxMHww&ixlib=rb-4.1.0&q=85',
       highlights: [
         'Bangkok & Pattaya',
         'Hotel Stay with Breakfast',
