@@ -1,39 +1,106 @@
 export const mockData = {
-  features: [
+  kashmirPackages: [
     {
-      icon: 'shield',
-      title: 'Trusted & Verified',
-      description: '4.7-star rating on Google with 175+ authentic reviews. Based in Srinagar with deep local knowledge and expertise.'
+      title: 'Honeymoon Package',
+      subtitle: '4 Nights / 5 Days',
+      price: '₹28,000',
+      priceDetails: 'per couple',
+      highlights: [
+        'Srinagar, Gulmarg, Pahalgam',
+        'Luxury Houseboat Stay',
+        'Shikara Ride & Gondola',
+        'Candlelight Dinner',
+        'Airport Transfers Included'
+      ]
     },
     {
-      icon: 'users',
-      title: 'Friendly Expert Staff',
-      description: 'Our experienced team provides personalized service with a smile. We treat every traveler like family.'
+      title: 'Family Package',
+      subtitle: '4 Nights / 5 Days',
+      price: '₹14,999',
+      priceDetails: 'per person',
+      highlights: [
+        'Srinagar, Gulmarg, Sonamarg',
+        'Hotel Stay with Breakfast',
+        'All Sightseeing Tours',
+        'Private Cab',
+        'Family-Friendly Activities'
+      ]
     },
     {
-      icon: 'heart',
-      title: 'Best Prices Guaranteed',
-      description: 'Competitive rates without compromising quality. Get the most value for your Kashmir adventure.'
+      title: 'Friendly Group Tours',
+      subtitle: '4 Nights / 5 Days',
+      price: '₹13,500',
+      priceDetails: 'per person',
+      highlights: [
+        'Complete Kashmir Tour',
+        'Group-Friendly Hotels',
+        'Adventure Activities',
+        'Local Guide Included',
+        'Best Value for Money'
+      ]
     }
   ],
-  packages: [
+  internationalPackages: [
     {
-      title: 'Classic Kashmir',
-      duration: '5 Days / 4 Nights',
-      description: 'Explore Srinagar, Gulmarg, Pahalgam, and Sonamarg. Perfect for first-time visitors.',
-      price: '₹15,999'
+      title: 'Dubai',
+      subtitle: '4 Nights / 5 Days',
+      price: '₹45,999',
+      priceDetails: 'per person',
+      highlights: [
+        'Burj Khalifa & Desert Safari',
+        '4-Star Hotel Stay',
+        'City Tours Included',
+        'Dubai Mall & Marina',
+        'Flight Tickets Extra'
+      ]
     },
     {
-      title: 'Honeymoon Special',
-      duration: '6 Days / 5 Nights',
-      description: 'Romantic getaway with luxury houseboats, shikara rides, and candlelight dinners.',
-      price: '₹22,999'
+      title: 'Maldives',
+      subtitle: '4 Nights / 5 Days',
+      price: '₹1,39,000',
+      priceDetails: 'per person (All Inclusive)',
+      highlights: [
+        'Luxury Beach Resort',
+        'Water Villa Stay',
+        'All Meals & Activities',
+        'Snorkeling & Diving',
+        'Flight Tickets Extra'
+      ]
     },
     {
-      title: 'Family Adventure',
-      duration: '7 Days / 6 Nights',
-      description: 'Complete Kashmir experience with activities for all ages. Memories for a lifetime.',
-      price: '₹18,999'
+      title: 'Thailand',
+      subtitle: '4 Nights / 5 Days',
+      price: '₹19,999',
+      priceDetails: 'per person',
+      highlights: [
+        'Bangkok & Pattaya',
+        'Hotel Stay with Breakfast',
+        'Coral Island Tour',
+        'City Sightseeing',
+        'Flight Tickets Extra'
+      ]
+    }
+  ],
+  trustPoints: [
+    {
+      icon: 'price',
+      title: '✔ Best Price Guarantee',
+      description: 'We offer the most competitive prices in the market with no hidden charges.'
+    },
+    {
+      icon: 'customize',
+      title: '✔ Customizable Packages',
+      description: 'Tailor your trip according to your preferences, budget, and schedule.'
+    },
+    {
+      icon: 'support',
+      title: '✔ 24/7 Travel Support',
+      description: 'Round-the-clock assistance before, during, and after your journey.'
+    },
+    {
+      icon: 'expert',
+      title: '✔ Trusted Travel Experts',
+      description: 'With 13+ years of experience and 175+ positive reviews, your trust is our priority.'
     }
   ],
   testimonials: [
