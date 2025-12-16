@@ -46,8 +46,27 @@ const LandingPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Mock submission - will integrate with backend later
-    setTimeout(() => {
+    
+    try {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/leads`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          full_name: formData.fullName,
+          phone: formData.phone,
+          email: formData.email,
+          destination: formData.destination,
+          travel_date: formData.travelDate,
+          travelers: formData.travelers,
+        }),
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to submit');
+      }
+      
       setIsSubmitting(false);
       setShowThankYou(true);
       setFormData({ fullName: '', phone: '', email: '', destination: '', travelDate: '', travelers: '' });
@@ -55,7 +74,11 @@ const LandingPage = () => {
         setShowThankYou(false);
         setIsFormOpen(false);
       }, 3000);
-    }, 1000);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setIsSubmitting(false);
+      alert('Failed to submit. Please try again or contact us via WhatsApp.');
+    }
   };
 
   const openForm = () => {
