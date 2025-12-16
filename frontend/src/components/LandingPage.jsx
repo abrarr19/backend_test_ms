@@ -40,7 +40,7 @@ const LandingPage = () => {
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <Mountain className="h-8 w-8 text-teal-600" />
+            <Mountain className="h-8 w-8 text-[#cc0e00]" />
             <div>
               <h1 className="text-xl font-bold text-gray-900">Tripoday Holidays</h1>
               <p className="text-xs text-gray-600">Tripoday India Pvt Ltd</p>
@@ -52,7 +52,7 @@ const LandingPage = () => {
               <span className="font-semibold">4.7</span>
               <span className="ml-1 text-gray-500">(175+ reviews)</span>
             </div>
-            <Button onClick={() => window.open('tel:+919876543210', '_self')} className="bg-teal-600 hover:bg-teal-700">
+            <Button onClick={() => window.open('tel:+919876543210', '_self')} className="bg-[#cc0e00] hover:bg-[#a00b00]">
               <Phone className="h-4 w-4 mr-2" />
               Call Now
             </Button>
