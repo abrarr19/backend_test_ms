@@ -440,10 +440,10 @@ const LandingPage = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-20 px-4 bg-[#E62020] text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-80 h-80 bg-white rounded-full blur-3xl"></div>
+      <section className="py-20 px-4 bg-black text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-64 h-64 bg-[#E62020] rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-80 h-80 bg-[#E62020] rounded-full blur-3xl"></div>
         </div>
         <div className="container mx-auto max-w-4xl text-center relative z-10">
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
@@ -452,7 +452,7 @@ const LandingPage = () => {
           <p className="text-xl md:text-2xl mb-10 opacity-90">
             Don't miss out on exclusive deals. Our travel experts are ready to help you!
           </p>
-          <Button onClick={openForm} size="lg" className="bg-white text-[#E62020] hover:bg-gray-100 text-xl px-12 py-8 font-bold shadow-2xl rounded-full">
+          <Button onClick={openForm} size="lg" className="bg-[#E62020] text-white hover:bg-[#cc0e00] text-xl px-12 py-8 font-bold shadow-2xl rounded-full">
             <Sparkles className="h-6 w-6 mr-2" />
             Get Instant Callback
           </Button>
