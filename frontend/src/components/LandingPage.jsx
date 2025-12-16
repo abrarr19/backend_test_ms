@@ -113,62 +113,71 @@ const LandingPage = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-[#E62020] to-[#cc0e00] relative overflow-hidden">
+      <section className="pt-32 pb-20 px-4 bg-black relative overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-[#E62020] rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#E62020] rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
         
         <div className="container mx-auto text-center max-w-5xl relative z-10">
-          <Badge className="mb-6 bg-white text-[#E62020] hover:bg-gray-100 text-sm px-4 py-2 shadow-lg">
+          {/* Logo */}
+          <div className="flex justify-center mb-8">
+            <img 
+              src="https://customer-assets.emergentagent.com/job_tripoday-tours/artifacts/qd47608e_IMG_0561%20%281%29.PNG" 
+              alt="Tripoday Holidays Logo" 
+              className="h-24 md:h-32"
+            />
+          </div>
+          
+          <Badge className="mb-6 bg-[#E62020] text-white hover:bg-[#cc0e00] text-sm px-4 py-2 shadow-lg">
             <Clock className="h-4 w-4 mr-2" />
             Open 24 Hours - Book Anytime!
           </Badge>
           <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            Best Holiday & International Tour Packages<br className="hidden md:block" /> <span className="text-black">Book Your Dream Trip Today</span>
+            Best Holiday & International Tour Packages<br className="hidden md:block" /> <span className="text-[#E62020]">Book Your Dream Trip Today</span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto font-light">
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto font-light">
             Affordable Honeymoon, Family & Group Tour Packages with Complete Support
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-6">
-            <Button onClick={openForm} size="lg" className="bg-white text-[#E62020] hover:bg-gray-100 text-xl px-12 py-7 shadow-2xl font-bold rounded-full">
+            <Button onClick={openForm} size="lg" className="bg-[#E62020] text-white hover:bg-[#cc0e00] text-xl px-12 py-7 shadow-2xl font-bold rounded-full">
               <Sparkles className="h-5 w-5 mr-2" />
               Get Free Quote Now
             </Button>
-            <Button onClick={openWhatsApp} size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#E62020] text-xl px-12 py-7 font-bold rounded-full">
+            <Button onClick={openWhatsApp} size="lg" variant="outline" className="border-2 border-[#E62020] text-[#E62020] hover:bg-[#E62020] hover:text-white text-xl px-12 py-7 font-bold rounded-full">
               <MessageCircle className="h-5 w-5 mr-2" />
               WhatsApp Us
             </Button>
           </div>
-          <p className="text-sm text-white/80 mb-12">
-            <CheckCircle2 className="h-4 w-4 inline mr-1 text-white" />
+          <p className="text-sm text-gray-400 mb-12">
+            <CheckCircle2 className="h-4 w-4 inline mr-1 text-[#E62020]" />
             Trusted by 17K+ Happy Travelers | 13+ Years Experience
           </p>
           
           {/* Trust Indicators */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
-            <div className="flex flex-col items-center space-y-3 p-4 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all">
-              <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center">
-                <CheckCircle2 className="h-7 w-7 text-[#E62020]" />
+            <div className="flex flex-col items-center space-y-3 p-4 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all">
+              <div className="w-14 h-14 bg-[#E62020] rounded-full flex items-center justify-center">
+                <CheckCircle2 className="h-7 w-7 text-white" />
               </div>
               <span className="text-base md:text-lg text-white font-semibold">Local Expertise</span>
             </div>
-            <div className="flex flex-col items-center space-y-3 p-4 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all">
-              <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center">
-                <TrendingDown className="h-7 w-7 text-[#E62020]" />
+            <div className="flex flex-col items-center space-y-3 p-4 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all">
+              <div className="w-14 h-14 bg-[#E62020] rounded-full flex items-center justify-center">
+                <TrendingDown className="h-7 w-7 text-white" />
               </div>
               <span className="text-base md:text-lg text-white font-semibold">Best Prices</span>
             </div>
-            <div className="flex flex-col items-center space-y-3 p-4 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all">
-              <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center">
-                <Headphones className="h-7 w-7 text-[#E62020]" />
+            <div className="flex flex-col items-center space-y-3 p-4 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all">
+              <div className="w-14 h-14 bg-[#E62020] rounded-full flex items-center justify-center">
+                <Headphones className="h-7 w-7 text-white" />
               </div>
               <span className="text-base md:text-lg text-white font-semibold">24/7 Support</span>
             </div>
-            <div className="flex flex-col items-center space-y-3 p-4 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 transition-all">
-              <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center">
-                <Award className="h-7 w-7 text-[#E62020]" />
+            <div className="flex flex-col items-center space-y-3 p-4 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all">
+              <div className="w-14 h-14 bg-[#E62020] rounded-full flex items-center justify-center">
+                <Award className="h-7 w-7 text-white" />
               </div>
               <span className="text-base md:text-lg text-white font-semibold">Trusted Experts</span>
             </div>
