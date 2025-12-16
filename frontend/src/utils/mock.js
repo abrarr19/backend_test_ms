@@ -19,7 +19,7 @@ export const mockData = {
       subtitle: '4 Nights / 5 Days',
       price: '₹14,999',
       priceDetails: 'per person',
-      image: 'https://images.pexels.com/photos/19570294/pexels-photo-19570294.jpeg',
+      image: 'https://images.pexels.com/photos/15045798/pexels-photo-15045798.jpeg',
       highlights: [
         'Srinagar, Gulmarg, Sonamarg',
         'Hotel Stay with Breakfast',
