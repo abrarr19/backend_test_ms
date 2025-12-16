@@ -146,7 +146,7 @@ const LandingPage = () => {
           <div className="grid md:grid-cols-3 gap-8">
             {mockData.packages.map((pkg, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300">
-                <div className="h-48 bg-gradient-to-br from-teal-400 to-cyan-500 flex items-center justify-center">
+                <div className="h-48 bg-gradient-to-br from-[#cc0e00] to-[#FF7B39] flex items-center justify-center">
                   <Mountain className="h-20 w-20 text-white opacity-80" />
                 </div>
                 <CardHeader>
@@ -156,8 +156,8 @@ const LandingPage = () => {
                 <CardContent>
                   <p className="text-gray-600 mb-4">{pkg.description}</p>
                   <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-teal-600">{pkg.price}</span>
-                    <Button className="bg-teal-600 hover:bg-teal-700">Book Now</Button>
+                    <span className="text-2xl font-bold text-[#cc0e00]">{pkg.price}</span>
+                    <Button className="bg-[#cc0e00] hover:bg-[#a00b00]">Book Now</Button>
                   </div>
                 </CardContent>
               </Card>
