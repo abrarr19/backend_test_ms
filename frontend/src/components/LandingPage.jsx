@@ -477,34 +477,34 @@ const LandingPage = () => {
           <div className="grid md:grid-cols-3 gap-10 mb-10">
             <div>
               <img 
-                src="https://customer-assets.emergentagent.com/job_tripoday-tours/artifacts/qd47608e_IMG_0561%20%281%29.PNG" 
+                src="https://customer-assets.emergentagent.com/job_tripoday-tours/artifacts/fxh6ufsj_IMG_0560%20%281%29.PNG" 
                 alt="Tripoday Holidays Logo" 
-                className="h-16 mb-4"
+                className="h-24 mb-4"
               />
-              <p className="text-lg font-semibold text-[#E62020] mb-3">Tripoday Holidays</p>
-              <p className="text-gray-400 mb-4 text-base">Your trusted partner for unforgettable Kashmir and international experiences.</p>
-              <div className="flex items-center text-sm text-gray-400">
+              <p className="text-lg font-semibold text-white mb-3">Tripoday Holidays</p>
+              <p className="text-white mb-4 text-base">Your trusted partner for unforgettable Kashmir and international experiences.</p>
+              <div className="flex items-center text-sm text-white">
                 <Star className="h-5 w-5 text-[#E62020] fill-[#E62020] mr-1" />
                 <span className="font-semibold">4.7</span>
                 <span className="ml-1">(175+ Google Reviews)</span>
               </div>
             </div>
             <div>
-              <h4 className="text-xl font-semibold mb-6 text-[#E62020]">Contact Us</h4>
-              <div className="space-y-4 text-gray-400">
+              <h4 className="text-xl font-semibold mb-6 text-white">Contact Us</h4>
+              <div className="space-y-4 text-white">
                 <div className="flex items-start space-x-3">
                   <MapPin className="h-6 w-6 text-[#E62020] mt-0.5 flex-shrink-0" />
                   <span className="text-base">7 Square Mall, Shah Anwar Colony, Hyderpora, Srinagar, J&K 190014</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Clock className="h-6 w-6 text-[#E62020]" />
-                  <span className="font-semibold text-[#E62020] text-base">Open 24 Hours</span>
+                  <span className="font-semibold text-white text-base">Open 24 Hours</span>
                 </div>
               </div>
             </div>
             <div>
-              <h4 className="text-xl font-semibold mb-6 text-[#E62020]">Popular Destinations</h4>
-              <div className="space-y-3 text-gray-400 text-base">
+              <h4 className="text-xl font-semibold mb-6 text-white">Popular Destinations</h4>
+              <div className="space-y-3 text-white text-base">
                 <p className="hover:text-[#E62020] cursor-pointer transition-colors">Kashmir Packages</p>
                 <p className="hover:text-[#E62020] cursor-pointer transition-colors">Honeymoon Tours</p>
                 <p className="hover:text-[#E62020] cursor-pointer transition-colors">Dubai Tours</p>
@@ -513,7 +513,7 @@ const LandingPage = () => {
               </div>
             </div>
           </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
+          <div className="border-t border-gray-800 pt-8 text-center text-white">
             <p>&copy; 2025 Tripoday Holidays. All rights reserved.</p>
           </div>
         </div>
