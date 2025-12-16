@@ -460,26 +460,26 @@ const LandingPage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-black text-white py-16 px-4">
+      <footer className="bg-white text-gray-900 py-16 px-4 border-t-4 border-[#E62020]">
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-3 gap-10 mb-10">
             <div>
               <img 
-                src="https://customer-assets.emergentagent.com/job_tripoday-tours/artifacts/fbdxfrxg_IMG_0561%20%281%29.PNG" 
+                src="https://customer-assets.emergentagent.com/job_tripoday-tours/artifacts/0l3mxznf_IMG_0559%20%281%29.PNG" 
                 alt="Tripoday Holidays Logo" 
                 className="h-16 mb-4"
               />
               <p className="text-lg font-semibold text-[#E62020] mb-3">Tripoday Holidays</p>
-              <p className="text-gray-400 mb-4 text-base">Your trusted partner for unforgettable Kashmir and international experiences.</p>
-              <div className="flex items-center text-sm text-gray-400">
+              <p className="text-gray-600 mb-4 text-base">Your trusted partner for unforgettable Kashmir and international experiences.</p>
+              <div className="flex items-center text-sm text-gray-600">
                 <Star className="h-5 w-5 text-[#E62020] fill-[#E62020] mr-1" />
                 <span className="font-semibold">4.7</span>
                 <span className="ml-1">(175+ Google Reviews)</span>
               </div>
             </div>
             <div>
-              <h4 className="text-xl font-semibold mb-6">Contact Us</h4>
-              <div className="space-y-4 text-gray-400">
+              <h4 className="text-xl font-semibold mb-6 text-[#E62020]">Contact Us</h4>
+              <div className="space-y-4 text-gray-600">
                 <div className="flex items-start space-x-3">
                   <MapPin className="h-6 w-6 text-[#E62020] mt-0.5 flex-shrink-0" />
                   <span className="text-base">7 Square Mall, Shah Anwar Colony, Hyderpora, Srinagar, J&K 190014</span>
@@ -491,8 +491,8 @@ const LandingPage = () => {
               </div>
             </div>
             <div>
-              <h4 className="text-xl font-semibold mb-6">Popular Destinations</h4>
-              <div className="space-y-3 text-gray-400 text-base">
+              <h4 className="text-xl font-semibold mb-6 text-[#E62020]">Popular Destinations</h4>
+              <div className="space-y-3 text-gray-600 text-base">
                 <p className="hover:text-[#E62020] cursor-pointer transition-colors">Kashmir Packages</p>
                 <p className="hover:text-[#E62020] cursor-pointer transition-colors">Honeymoon Tours</p>
                 <p className="hover:text-[#E62020] cursor-pointer transition-colors">Dubai Tours</p>
@@ -501,7 +501,7 @@ const LandingPage = () => {
               </div>
             </div>
           </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
+          <div className="border-t border-gray-200 pt-8 text-center text-gray-600">
             <p>&copy; 2025 Tripoday Holidays. All rights reserved.</p>
           </div>
         </div>
