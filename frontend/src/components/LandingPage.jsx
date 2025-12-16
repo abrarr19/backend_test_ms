@@ -85,24 +85,24 @@ const LandingPage = () => {
       </button>
 
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-lg">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm border-b border-gray-800 shadow-lg">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-4">
             <img 
-              src="https://customer-assets.emergentagent.com/job_tripoday-tours/artifacts/0l3mxznf_IMG_0559%20%281%29.PNG" 
+              src="https://customer-assets.emergentagent.com/job_tripoday-tours/artifacts/qd47608e_IMG_0561%20%281%29.PNG" 
               alt="Tripoday Holidays Logo" 
               className="h-16 md:h-20"
             />
             <div className="flex flex-col">
-              <h1 className="text-xl md:text-3xl font-bold text-[#E62020] leading-tight">Tripoday Holidays</h1>
-              <p className="text-xs md:text-sm text-gray-600">Make Your Trips Everyday</p>
+              <h1 className="text-xl md:text-3xl font-bold text-white leading-tight">Tripoday Holidays</h1>
+              <p className="text-xs md:text-sm text-gray-400">Make Your Trips Everyday</p>
             </div>
           </div>
           <div className="flex items-center space-x-3">
-            <div className="hidden md:flex items-center text-sm text-gray-900 bg-gray-100 px-3 py-2 rounded-lg">
+            <div className="hidden md:flex items-center text-sm text-white bg-white/10 px-3 py-2 rounded-lg">
               <Star className="h-4 w-4 text-[#E62020] fill-[#E62020] mr-1" />
               <span className="font-semibold">4.7</span>
-              <span className="ml-1 text-gray-600">(175+)</span>
+              <span className="ml-1 text-gray-300">(175+)</span>
             </div>
             <Button onClick={openForm} className="bg-[#E62020] hover:bg-[#cc0e00] text-white font-semibold shadow-lg rounded-full w-10 h-10 md:w-auto md:h-auto md:px-4 md:py-2 flex items-center justify-center">
               <span className="hidden md:inline">Get Quote</span>
