@@ -201,7 +201,7 @@ const LandingPage = () => {
       </section>
 
       {/* Contact Form */}
-      <section className="py-20 px-4 bg-gradient-to-br from-teal-50 to-cyan-50">
+      <section className="py-20 px-4 bg-gradient-to-br from-red-50 to-orange-50">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
