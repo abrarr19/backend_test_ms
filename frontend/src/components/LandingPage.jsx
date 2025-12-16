@@ -116,12 +116,12 @@ const LandingPage = () => {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {mockData.features.map((feature, index) => (
-              <Card key={index} className="border-2 hover:border-teal-500 hover:shadow-lg transition-all duration-300">
+              <Card key={index} className="border-2 hover:border-[#cc0e00] hover:shadow-lg transition-all duration-300">
                 <CardHeader>
-                  <div className="w-14 h-14 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
-                    {feature.icon === 'shield' && <Shield className="h-7 w-7 text-teal-600" />}
-                    {feature.icon === 'users' && <Users className="h-7 w-7 text-teal-600" />}
-                    {feature.icon === 'heart' && <Heart className="h-7 w-7 text-teal-600" />}
+                  <div className="w-14 h-14 bg-red-50 rounded-lg flex items-center justify-center mb-4">
+                    {feature.icon === 'shield' && <Shield className="h-7 w-7 text-[#cc0e00]" />}
+                    {feature.icon === 'users' && <Users className="h-7 w-7 text-[#cc0e00]" />}
+                    {feature.icon === 'heart' && <Heart className="h-7 w-7 text-[#cc0e00]" />}
                   </div>
                   <CardTitle className="text-xl">{feature.title}</CardTitle>
                 </CardHeader>
