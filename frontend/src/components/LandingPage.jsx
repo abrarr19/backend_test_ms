@@ -132,48 +132,39 @@ const LandingPage = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 bg-[#E62020] relative overflow-hidden">
+      <section className="pt-32 pb-20 px-4 bg-white relative overflow-hidden">
         {/* Animated background elements */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-[#E62020] rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#E62020] rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
         
         <div className="container mx-auto text-center max-w-5xl relative z-10">
-          {/* Logo */}
-          <div className="flex justify-center mb-8">
-            <img 
-              src="https://customer-assets.emergentagent.com/job_tripoday-tours/artifacts/fxh6ufsj_IMG_0560%20%281%29.PNG" 
-              alt="Tripoday Holidays Logo" 
-              className="h-20 md:h-28"
-            />
-          </div>
-          
-          <Badge className="mb-6 bg-white/20 text-white hover:bg-white/30 text-sm px-4 py-2 shadow-lg backdrop-blur-sm">
+          <Badge className="mb-6 bg-[#E62020] text-white hover:bg-[#cc0e00] text-sm px-4 py-2 shadow-lg">
             <Clock className="h-4 w-4 mr-2" />
             Open 24 Hours - Book Anytime!
           </Badge>
-          <h1 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">
+          <h1 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight">
             Best Holiday & International Tour Packages
           </h1>
-          <h2 className="text-xl md:text-3xl font-semibold text-white mb-4">
+          <h2 className="text-xl md:text-3xl font-semibold text-[#E62020] mb-4">
             Book Your Dream Trip Today
           </h2>
-          <p className="text-base md:text-lg text-white/90 mb-8 max-w-3xl mx-auto">
+          <p className="text-base md:text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
             Affordable Honeymoon, Family & Group Tour Packages with Complete Support
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-6">
-            <Button onClick={openForm} size="lg" className="bg-white text-[#E62020] hover:bg-gray-100 text-lg px-10 py-6 shadow-2xl font-bold rounded-full">
+            <Button onClick={openForm} size="lg" className="bg-[#E62020] text-white hover:bg-[#cc0e00] text-lg px-10 py-6 shadow-2xl font-bold rounded-full">
               <Sparkles className="h-5 w-5 mr-2" />
               Get Free Quote Now
             </Button>
-            <Button onClick={openWhatsApp} size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#E62020] text-lg px-10 py-6 font-bold rounded-full">
+            <Button onClick={openWhatsApp} size="lg" variant="outline" className="border-2 border-[#E62020] text-[#E62020] hover:bg-[#E62020] hover:text-white text-lg px-10 py-6 font-bold rounded-full">
               <MessageCircle className="h-5 w-5 mr-2" />
               WhatsApp Us
             </Button>
           </div>
-          <p className="text-sm text-white/90 mb-12">
-            <CheckCircle2 className="h-4 w-4 inline mr-1 text-white" />
+          <p className="text-sm text-gray-600 mb-12">
+            <CheckCircle2 className="h-4 w-4 inline mr-1 text-[#E62020]" />
             Trusted by 17K+ Happy Travelers | 13+ Years Experience
           </p>
           
