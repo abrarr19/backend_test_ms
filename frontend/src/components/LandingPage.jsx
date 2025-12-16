@@ -262,7 +262,7 @@ const LandingPage = () => {
                   type="submit"
                   size="lg"
                   disabled={isSubmitting}
-                  className="w-full bg-teal-600 hover:bg-teal-700 text-lg py-6"
+                  className="w-full bg-[#cc0e00] hover:bg-[#a00b00] text-lg py-6"
                 >
                   {isSubmitting ? 'Sending...' : 'Get Free Quote'}
                 </Button>
