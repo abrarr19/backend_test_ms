@@ -41,6 +41,20 @@ export const mockData = {
         'Local Guide Included',
         'Best Value for Money'
       ]
+    },
+    {
+      title: 'Tulip Festival Kashmir',
+      subtitle: '4 Nights / 5 Days',
+      price: '₹18,999',
+      priceDetails: 'per person',
+      image: 'https://images.unsplash.com/photo-1715933787517-6082995e0d07?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3MjQyMTd8MHwxfHNlYXJjaHwxfHxLYXNobWlyJTIwdHVsaXAlMjBnYXJkZW58ZW58MHx8fHwxNzY1ODg5NjkzfDA&ixlib=rb-4.1.0&q=85',
+      highlights: [
+        '25 March - 30 April',
+        'Tulip Garden Visit',
+        'Srinagar & Dal Lake',
+        'Seasonal Flower Festival',
+        'Perfect for Photography'
+      ]
     }
   ],
   internationalPackages: [

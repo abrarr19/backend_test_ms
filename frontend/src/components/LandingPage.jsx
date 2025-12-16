@@ -75,13 +75,13 @@ const LandingPage = () => {
 
   return (
     <div className="landing-page">
-      {/* WhatsApp Floating Button */}
+      {/* WhatsApp Floating Button - Circular */}
       <button
         onClick={openWhatsApp}
-        className="fixed bottom-6 left-6 z-50 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full p-4 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 animate-pulse"
+        className="fixed bottom-6 left-6 z-50 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full w-16 h-16 flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 animate-pulse"
         aria-label="Contact on WhatsApp"
       >
-        <MessageCircle className="h-7 w-7" />
+        <MessageCircle className="h-8 w-8" />
       </button>
 
       {/* Header */}
@@ -89,23 +89,24 @@ const LandingPage = () => {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-4">
             <img 
-              src="https://customer-assets.emergentagent.com/job_tripoday-tours/artifacts/0k3d5d0a_IMG_0561%20%281%29.PNG" 
+              src="https://customer-assets.emergentagent.com/job_tripoday-tours/artifacts/fbdxfrxg_IMG_0561%20%281%29.PNG" 
               alt="Tripoday Holidays Logo" 
               className="h-16 md:h-20"
             />
             <div className="flex flex-col">
-              <h1 className="text-xl md:text-3xl font-bold text-white leading-tight">Tripoday India Pvt Ltd</h1>
+              <h1 className="text-xl md:text-3xl font-bold text-white leading-tight">Tripoday Holidays</h1>
               <p className="text-xs md:text-sm text-gray-400">Make Your Trips Everyday</p>
             </div>
           </div>
           <div className="flex items-center space-x-3">
             <div className="hidden md:flex items-center text-sm text-white bg-white/10 px-3 py-2 rounded-lg">
-              <Star className="h-4 w-4 text-yellow-400 fill-yellow-400 mr-1" />
+              <Star className="h-4 w-4 text-[#E62020] fill-[#E62020] mr-1" />
               <span className="font-semibold">4.7</span>
               <span className="ml-1 text-gray-300">(175+)</span>
             </div>
-            <Button onClick={openForm} size="sm" className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black hover:from-yellow-500 hover:to-yellow-600 font-semibold shadow-lg">
-              Get Quote
+            <Button onClick={openForm} className="bg-[#E62020] hover:bg-[#cc0e00] font-semibold shadow-lg rounded-full w-10 h-10 md:w-auto md:h-auto md:px-4 md:py-2 flex items-center justify-center">
+              <span className="hidden md:inline">Get Quote</span>
+              <Sparkles className="h-5 w-5 md:hidden" />
             </Button>
           </div>
         </div>
@@ -115,29 +116,27 @@ const LandingPage = () => {
       <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-gray-900 via-black to-gray-900 relative overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-400 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-400 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-[#E62020] rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
         
         <div className="container mx-auto text-center max-w-5xl relative z-10">
-          <Badge className="mb-6 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black hover:from-yellow-500 hover:to-yellow-600 text-sm px-4 py-2 shadow-lg">
+          <Badge className="mb-6 bg-[#E62020] text-white hover:bg-[#cc0e00] text-sm px-4 py-2 shadow-lg">
             <Clock className="h-4 w-4 mr-2" />
             Open 24 Hours - Book Anytime!
           </Badge>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Best Holiday & International<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">Tour Packages</span><br />
-            <span className="text-3xl md:text-5xl text-gray-300">Book Your Dream Trip Today</span>
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Best Holiday & International Tour Packages<br className="hidden md:block" /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E62020] to-white">Book Your Dream Trip Today</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto font-light">
             Affordable Honeymoon, Family & Group Tour Packages with Complete Support
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-6">
-            <Button onClick={openForm} size="lg" className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black hover:from-yellow-500 hover:to-yellow-600 text-xl px-12 py-7 shadow-2xl font-bold">
+            <Button onClick={openForm} size="lg" className="bg-[#E62020] hover:bg-[#cc0e00] text-white text-xl px-12 py-7 shadow-2xl font-bold rounded-full">
               <Sparkles className="h-5 w-5 mr-2" />
               Get Free Quote Now
             </Button>
-            <Button onClick={openWhatsApp} size="lg" variant="outline" className="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black text-xl px-12 py-7 font-bold">
+            <Button onClick={openWhatsApp} size="lg" variant="outline" className="border-2 border-[#E62020] text-[#E62020] hover:bg-[#E62020] hover:text-white text-xl px-12 py-7 font-bold rounded-full">
               <MessageCircle className="h-5 w-5 mr-2" />
               WhatsApp Us
             </Button>
@@ -150,26 +149,26 @@ const LandingPage = () => {
           {/* Trust Indicators */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
             <div className="flex flex-col items-center space-y-3 p-4 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all">
-              <div className="w-14 h-14 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center">
-                <CheckCircle2 className="h-7 w-7 text-black" />
+              <div className="w-14 h-14 bg-[#E62020] rounded-full flex items-center justify-center">
+                <CheckCircle2 className="h-7 w-7 text-white" />
               </div>
               <span className="text-base md:text-lg text-white font-semibold">Local Expertise</span>
             </div>
             <div className="flex flex-col items-center space-y-3 p-4 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all">
-              <div className="w-14 h-14 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center">
-                <TrendingDown className="h-7 w-7 text-black" />
+              <div className="w-14 h-14 bg-[#E62020] rounded-full flex items-center justify-center">
+                <TrendingDown className="h-7 w-7 text-white" />
               </div>
               <span className="text-base md:text-lg text-white font-semibold">Best Prices</span>
             </div>
             <div className="flex flex-col items-center space-y-3 p-4 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all">
-              <div className="w-14 h-14 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center">
-                <Headphones className="h-7 w-7 text-black" />
+              <div className="w-14 h-14 bg-[#E62020] rounded-full flex items-center justify-center">
+                <Headphones className="h-7 w-7 text-white" />
               </div>
               <span className="text-base md:text-lg text-white font-semibold">24/7 Support</span>
             </div>
             <div className="flex flex-col items-center space-y-3 p-4 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all">
-              <div className="w-14 h-14 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center">
-                <Award className="h-7 w-7 text-black" />
+              <div className="w-14 h-14 bg-[#E62020] rounded-full flex items-center justify-center">
+                <Award className="h-7 w-7 text-white" />
               </div>
               <span className="text-base md:text-lg text-white font-semibold">Trusted Experts</span>
             </div>
@@ -179,9 +178,9 @@ const LandingPage = () => {
 
       {/* Kashmir Tour Packages */}
       <section className="py-20 px-4 bg-gradient-to-b from-white to-gray-50">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-yellow-100 text-yellow-800 text-sm px-4 py-2">
+            <Badge className="mb-4 bg-[#E62020] text-white text-sm px-4 py-2">
               Most Popular
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -189,7 +188,7 @@ const LandingPage = () => {
             </h2>
             <p className="text-xl text-gray-600">Explore the paradise on earth with our curated packages</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {mockData.kashmirPackages.map((pkg, index) => (
               <Card key={index} className="border-0 shadow-2xl hover:shadow-3xl transition-all duration-300 overflow-hidden group">
                 <div className="h-56 overflow-hidden relative">
@@ -199,7 +198,7 @@ const LandingPage = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute top-4 right-4">
-                    <Badge className="bg-yellow-400 text-black font-bold px-3 py-1">
+                    <Badge className="bg-[#E62020] text-white font-bold px-3 py-1">
                       Hot Deal
                     </Badge>
                   </div>
@@ -216,12 +215,12 @@ const LandingPage = () => {
                   <ul className="space-y-3 mb-8">
                     {pkg.highlights.map((highlight, i) => (
                       <li key={i} className="flex items-start space-x-3 text-base">
-                        <CheckCircle2 className="h-5 w-5 text-yellow-500 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-[#E62020] mt-0.5 flex-shrink-0" />
                         <span className="text-gray-700">{highlight}</span>
                       </li>
                     ))}
                   </ul>
-                  <Button onClick={scrollToForm} className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black hover:from-yellow-500 hover:to-yellow-600 py-6 text-lg font-bold shadow-lg">
+                  <Button onClick={scrollToForm} className="w-full bg-[#E62020] hover:bg-[#cc0e00] text-white py-6 text-lg font-bold shadow-lg rounded-full">
                     Enquire Now
                   </Button>
                 </CardContent>
@@ -235,7 +234,7 @@ const LandingPage = () => {
       <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-blue-100 text-blue-800 text-sm px-4 py-2">
+            <Badge className="mb-4 bg-black text-white text-sm px-4 py-2">
               International Destinations
             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -253,7 +252,7 @@ const LandingPage = () => {
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute top-4 right-4">
-                    <Badge className="bg-blue-500 text-white font-bold px-3 py-1">
+                    <Badge className="bg-black text-white font-bold px-3 py-1">
                       Trending
                     </Badge>
                   </div>
@@ -270,12 +269,12 @@ const LandingPage = () => {
                   <ul className="space-y-3 mb-8">
                     {pkg.highlights.map((highlight, i) => (
                       <li key={i} className="flex items-start space-x-3 text-base">
-                        <CheckCircle2 className="h-5 w-5 text-yellow-500 mt-0.5 flex-shrink-0" />
+                        <CheckCircle2 className="h-5 w-5 text-[#E62020] mt-0.5 flex-shrink-0" />
                         <span className="text-gray-700">{highlight}</span>
                       </li>
                     ))}
                   </ul>
-                  <Button onClick={scrollToForm} className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black hover:from-yellow-500 hover:to-yellow-600 py-6 text-lg font-bold shadow-lg">
+                  <Button onClick={scrollToForm} className="w-full bg-[#E62020] hover:bg-[#cc0e00] text-white py-6 text-lg font-bold shadow-lg rounded-full">
                     Book Now
                   </Button>
                 </CardContent>
@@ -296,12 +295,12 @@ const LandingPage = () => {
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             {mockData.trustPoints.map((point, index) => (
-              <div key={index} className="flex items-start space-x-5 p-8 rounded-2xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-yellow-400">
-                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
-                  {point.icon === 'price' && <TrendingDown className="h-8 w-8 text-black" />}
-                  {point.icon === 'customize' && <Shield className="h-8 w-8 text-black" />}
-                  {point.icon === 'support' && <Headphones className="h-8 w-8 text-black" />}
-                  {point.icon === 'expert' && <Award className="h-8 w-8 text-black" />}
+              <div key={index} className="flex items-start space-x-5 p-8 rounded-2xl bg-white shadow-xl hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-[#E62020]">
+                <div className="w-16 h-16 bg-[#E62020] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                  {point.icon === 'price' && <TrendingDown className="h-8 w-8 text-white" />}
+                  {point.icon === 'customize' && <Shield className="h-8 w-8 text-white" />}
+                  {point.icon === 'support' && <Headphones className="h-8 w-8 text-white" />}
+                  {point.icon === 'expert' && <Award className="h-8 w-8 text-white" />}
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{point.title}</h3>
@@ -320,9 +319,9 @@ const LandingPage = () => {
             <h3 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               What Our Travelers Say
             </h3>
-            <div className="flex justify-center items-center space-x-2 text-yellow-500">
+            <div className="flex justify-center items-center space-x-2 text-[#E62020]">
               {[1, 2, 3, 4, 5].map((star) => (
-                <Star key={star} className="h-6 w-6 fill-yellow-500" />
+                <Star key={star} className="h-6 w-6 fill-[#E62020]" />
               ))}
               <span className="ml-3 text-gray-700 font-semibold text-lg">4.7 out of 5 (175+ reviews)</span>
             </div>
@@ -333,7 +332,7 @@ const LandingPage = () => {
                 <CardHeader>
                   <div className="flex items-center space-x-1 mb-3">
                     {[1, 2, 3, 4, 5].map((star) => (
-                      <Star key={star} className="h-5 w-5 fill-yellow-500 text-yellow-500" />
+                      <Star key={star} className="h-5 w-5 fill-[#E62020] text-[#E62020]" />
                     ))}
                   </div>
                   <CardTitle className="text-xl">{testimonial.name}</CardTitle>
@@ -430,7 +429,7 @@ const LandingPage = () => {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black hover:from-yellow-500 hover:to-yellow-600 py-7 text-xl font-bold shadow-xl"
+                  className="w-full bg-[#E62020] hover:bg-[#cc0e00] text-white py-7 text-xl font-bold shadow-xl rounded-full"
                 >
                   {isSubmitting ? 'Submitting...' : 'Get Best Deal'}
                 </Button>
@@ -443,8 +442,8 @@ const LandingPage = () => {
       {/* Final CTA Section */}
       <section className="py-20 px-4 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-10 left-10 w-64 h-64 bg-yellow-400 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-80 h-80 bg-yellow-500 rounded-full blur-3xl"></div>
+          <div className="absolute top-10 left-10 w-64 h-64 bg-[#E62020] rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-80 h-80 bg-white rounded-full blur-3xl"></div>
         </div>
         <div className="container mx-auto max-w-4xl text-center relative z-10">
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
@@ -453,7 +452,7 @@ const LandingPage = () => {
           <p className="text-xl md:text-2xl mb-10 opacity-90">
             Don't miss out on exclusive deals. Our travel experts are ready to help you!
           </p>
-          <Button onClick={openForm} size="lg" className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black hover:from-yellow-500 hover:to-yellow-600 text-xl px-12 py-8 font-bold shadow-2xl">
+          <Button onClick={openForm} size="lg" className="bg-[#E62020] hover:bg-[#cc0e00] text-white text-xl px-12 py-8 font-bold shadow-2xl rounded-full">
             <Sparkles className="h-6 w-6 mr-2" />
             Get Instant Callback
           </Button>
@@ -466,14 +465,14 @@ const LandingPage = () => {
           <div className="grid md:grid-cols-3 gap-10 mb-10">
             <div>
               <img 
-                src="https://customer-assets.emergentagent.com/job_tripoday-tours/artifacts/0k3d5d0a_IMG_0561%20%281%29.PNG" 
+                src="https://customer-assets.emergentagent.com/job_tripoday-tours/artifacts/fbdxfrxg_IMG_0561%20%281%29.PNG" 
                 alt="Tripoday Holidays Logo" 
                 className="h-16 mb-4"
               />
-              <p className="text-lg font-semibold text-yellow-400 mb-3">Tripoday India Pvt Ltd</p>
+              <p className="text-lg font-semibold text-[#E62020] mb-3">Tripoday Holidays</p>
               <p className="text-gray-400 mb-4 text-base">Your trusted partner for unforgettable Kashmir and international experiences.</p>
               <div className="flex items-center text-sm text-gray-400">
-                <Star className="h-5 w-5 text-yellow-400 fill-yellow-400 mr-1" />
+                <Star className="h-5 w-5 text-[#E62020] fill-[#E62020] mr-1" />
                 <span className="font-semibold">4.7</span>
                 <span className="ml-1">(175+ Google Reviews)</span>
               </div>
@@ -482,28 +481,28 @@ const LandingPage = () => {
               <h4 className="text-xl font-semibold mb-6">Contact Us</h4>
               <div className="space-y-4 text-gray-400">
                 <div className="flex items-start space-x-3">
-                  <MapPin className="h-6 w-6 text-yellow-400 mt-0.5 flex-shrink-0" />
+                  <MapPin className="h-6 w-6 text-[#E62020] mt-0.5 flex-shrink-0" />
                   <span className="text-base">7 Square Mall, Shah Anwar Colony, Hyderpora, Srinagar, J&K 190014</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Clock className="h-6 w-6 text-yellow-400" />
-                  <span className="font-semibold text-yellow-400 text-base">Open 24 Hours</span>
+                  <Clock className="h-6 w-6 text-[#E62020]" />
+                  <span className="font-semibold text-[#E62020] text-base">Open 24 Hours</span>
                 </div>
               </div>
             </div>
             <div>
               <h4 className="text-xl font-semibold mb-6">Popular Destinations</h4>
               <div className="space-y-3 text-gray-400 text-base">
-                <p className="hover:text-yellow-400 cursor-pointer transition-colors">Kashmir Packages</p>
-                <p className="hover:text-yellow-400 cursor-pointer transition-colors">Honeymoon Tours</p>
-                <p className="hover:text-yellow-400 cursor-pointer transition-colors">Dubai Tours</p>
-                <p className="hover:text-yellow-400 cursor-pointer transition-colors">Maldives Tours</p>
-                <p className="hover:text-yellow-400 cursor-pointer transition-colors">Thailand Tours</p>
+                <p className="hover:text-[#E62020] cursor-pointer transition-colors">Kashmir Packages</p>
+                <p className="hover:text-[#E62020] cursor-pointer transition-colors">Honeymoon Tours</p>
+                <p className="hover:text-[#E62020] cursor-pointer transition-colors">Dubai Tours</p>
+                <p className="hover:text-[#E62020] cursor-pointer transition-colors">Maldives Tours</p>
+                <p className="hover:text-[#E62020] cursor-pointer transition-colors">Thailand Tours</p>
               </div>
             </div>
           </div>
           <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 Tripoday India Pvt Ltd. All rights reserved.</p>
+            <p>&copy; 2025 Tripoday Holidays. All rights reserved.</p>
           </div>
         </div>
       </footer>
@@ -591,7 +590,7 @@ const LandingPage = () => {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-yellow-400 to-yellow-500 text-black hover:from-yellow-500 hover:to-yellow-600 py-7 text-xl font-bold"
+                  className="w-full bg-[#E62020] hover:bg-[#cc0e00] text-white py-7 text-xl font-bold rounded-full"
                 >
                   {isSubmitting ? 'Submitting...' : 'Get Best Deal'}
                 </Button>
